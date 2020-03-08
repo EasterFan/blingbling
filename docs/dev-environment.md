@@ -30,7 +30,8 @@ export HOMEBREW_NO_AUTO_UPDATE=true
 
 
 ## Git 环境
-Mac 有内嵌的 Git，但是在更新时不方便，所以需要用 homebrew 安装并更新 git,
+Mac 有内嵌的 Git，但是在更新时不方便，所以需要用 homebrew 安装并更新 git
+
 ## 安装 Git 并升级至最新版
 ```bash
 # 查看当前版本 git version 2.22.0
