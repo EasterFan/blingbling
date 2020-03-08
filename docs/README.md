@@ -4,6 +4,7 @@
 
 # 起步
 * [dev 环境配置](dev-environment.md)
+* [那些用的很顺手的软件](useful-software.md)
 
 # java SE 基础
 
