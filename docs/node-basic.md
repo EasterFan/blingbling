@@ -15,4 +15,4 @@ npm：nodejs 包管理工具。
 - npm 管理 nodejs 中的第三方插件。他的作用与Ruby中的 bundler及Java中的maven相同，都是对第三方依赖进行管理的。
 
 三者的关系：  
-[关系](https://raw.githubusercontent.com/EasterFan/PicGo/master/blingbling/2020/20200229102215.png)
+![关系](https://raw.githubusercontent.com/EasterFan/PicGo/master/blingbling/2020/20200229102215.png)
