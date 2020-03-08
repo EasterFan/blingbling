@@ -1,0 +1,18 @@
+# 开始
+
+> 一直在找一个很顺手的文档笔记框架，前后尝试了 jekyll， gitbook，vuepress，Docusaurus（taro 的文档很好看，修改样式真是累，坚持半个月果断放弃），来来回回折腾恍然笔记没写几篇，时间都花在各种笔记框架的尝试上了，遂定就用 docsify
+
+# 起步
+* [dev 环境配置](dev-environment.md)
+
+# java SE 基础
+
+
+
+
+
+# 各种 TODO
+- [ ] javaSE 复盘总结
+- [ ] mysql 复盘总结
+- [ ] springboot 知识点梳理
+- [ ] docker 复盘总结
