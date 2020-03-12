@@ -1,6 +1,7 @@
 <!-- # 起步 -->
 * [开始](README.md)
 * [dev 环境配置](dev-environment.md)
+* [用好 IDEA](use-idea.md)
 * [那些用的很顺手的软件](useful-software.md)
 
 <!-- # javaSE -->
