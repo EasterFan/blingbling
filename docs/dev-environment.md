@@ -6,8 +6,8 @@ title: 开发环境准备
 
 > 话说，工欲善其事，必先利其器
 
-## 系统优化
-### 基本设置
+# 一. 系统优化
+## 基本设置
 ```bash
 ### F1-F12 功能键设置
 System Preferences > Keyboard > Touch Bar shows
@@ -22,14 +22,14 @@ System Preferences > Date & Time > Clock > Show date
 System Preferences > Keyboard
 ```
 
-### 优化 Homebrew
+## 优化 Homebrew
 关闭 homebrew 自动更新  
 vim ~/.bash_profile
 export HOMEBREW_NO_AUTO_UPDATE=true   
 `brew update` 需要的时候再手动更新homebrew
 
 
-## Git 环境
+# 二. Git 环境
 Mac 有内嵌的 Git，但是在更新时不方便，所以需要用 homebrew 安装并更新 git
 
 ## 安装 Git 并升级至最新版
@@ -114,10 +114,10 @@ git push --force --tags origin 'refs/heads/*'
 ```
 
 
-## nodejs 环境
+# 三. nodejs 环境
 > 安装nvm-----配置nvm环境变量----安装node ----淘宝cnpm加速
 
-### 安装 nvm
+## 安装 nvm
 nvm是一个开源的 Node 版本管理器，通过简单的 bash 脚本来管理、切换多个 Node.js 版本,使用 nvm 可以安装官网最新版本之前的任意版本,可以任意切换不同版本  
 
 下载：  
@@ -137,7 +137,7 @@ source  ~/.bashrc
 nvm --version
 ```
 
-### 安装 node
+## 安装 node
 ```bash
 # 查找 node 版本
 nvm ls-remote
@@ -156,7 +156,7 @@ nvm use 8.10.0
 nvm uninstall 8.10.0
 ```
 
-### 淘宝 cnpm 加速
+## 淘宝 cnpm 加速
 ```bash
 # 下载
 npm install -g cnpm --registry=https://registry.npm.taobao.org
@@ -167,11 +167,11 @@ cnpm -v
 
 
 
-## ss 环境
+# 四. ss 环境
 
 
-### 命令行环境
-#### 修改 bash 配置文件
+## 命令行环境
+### 修改 bash 配置文件
 原来的配置文件都写在 `.bash_profile` 里，但 iterm 依赖的 zsh 在登陆的时候默认只会加载 `~/.zshrc`,导致每次都要手动刷新配置文件，解决方法是编辑`~/.zshrc`：
 
 ```bash
@@ -188,7 +188,7 @@ source ~/.zshrc
 
 
 
-#### 科学命令行
+### 科学命令行
 `brew cask install iterm2`
 
 现在速度十几k：  
@@ -201,9 +201,9 @@ Receiving objects:  29% (24766/82792), 11.51 MiB | 17.00 KiB/s
 ```
 
 
-## gitbook 环境
+# 五. gitbook 环境
 
-### 1. gitbook
+## 1. gitbook
 ```bash
 # 先推送一版源码，再初始化创建分支并推动远程
 git checkout -b gh-pages
@@ -218,31 +218,34 @@ bookgo
 alias bookgo="git add . && git commit -m 'Auot-update' && git pull --rebase && git push origin master && npm run docs && gh-pages -d website/build/blingbling"
 ```
 
-### 2. atom 环境
-#### 常用插件
+## 2. atom 环境
+### 常用插件
 表格功能： [markdown-table-editor](https://atom.io/packages/markdown-table-editor)  
 ![](https://raw.githubusercontent.com/wiki/susisu/atom-markdown-table-editor/images/demo.gif)    
 
 粘贴图片改路径：Markdown-img-paste -- 在 settings 中设置图片路径(超级喜欢!)  
 
 同步预览：markdown-scroll-sync
-#### 常用快捷键
+### 常用快捷键
 
-### 3. Github + Picgo 搭建个人图床
+## 3. Github + Picgo 搭建个人图床
 
-#### 配置 github
+### 配置 github
 - 新建一个**公共仓库**
 - 在公共仓库的`settings/developers settings`找到生成 token，也可直接访问 [https://github.com/settings/tokens/new](https://github.com/settings/tokens/new)
 
-#### 配置 PicGo
-### 4. 设置定时任务
+### 配置 PicGo
+
+
+
+
+## 4. 设置定时任务
 > launchctl是一个统一的服务管理框架，可以启动、停止和管理守护进程、应用程序、进程和脚本等。
 launchctl是通过配置文件来指定执行周期和任务的。
 
 笔记时常更新，每次手动push就很麻烦，所以设置一个每天早上11点自动同步到GitHub的任务，Mac 上定时任务主要有两个命令：crontab 和 launchctl。这次尝试的是后者。  
 
-#### 配置文件：
-##### 在项目目录新建脚本`bookgo.sh`
+### 在项目目录新建脚本`bookgo.sh`
 - `echo $PATH`,先在命令行中执行，将输出结果添加到脚本第一行（因为 npm 配置在 Path 中，需要指定 PATH，否则无法找到 npm 命令）
 
 - `chmod 777 bookgo.sh` 给脚本添加执行权限
@@ -260,7 +263,7 @@ git add . && git commit -m 'Auot-update' && git pull origin master --rebase && g
 echo 'finish' >> /Users/easterfan/Documents/bookgolog/log
 ```
 
-##### 新建 plist 定时任务
+### 新建 plist 定时任务
 - 任务：每天早上11点执行blingbling/bookgo.sh,自动同步仓库
 `cd ~/Library/LaunchAgents && touch com.easter.bookgo.plist`
 
@@ -311,7 +314,7 @@ plist 文件存放路径为/Library/LaunchAgents或/Library/LaunchDaemons，前�
 /System/Library/LaunchAgents 由Mac OS X为用户定义的任务项
 /System/Library/LaunchDaemons 由Mac OS X定义的守护进程任务项
 ```
-##### 加载命令
+### 加载命令
 `launchctl load -w com.easter.bookgo.plist`  
 编写完 plist 文件后加载成功！
 
@@ -331,20 +334,70 @@ plist 文件存放路径为/Library/LaunchAgents或/Library/LaunchDaemons，前�
 # 结束任务
  launchctl stop  com.easter.bookgo.plist
 ```
-## 清理环境
+# 六. 清理环境
 
 
-## 快捷键管理
-### Mac 自带快捷键
+# 快捷键管理
+## Mac 自带快捷键
 
-### idea 快捷键
+## idea 快捷键
 常用快捷键  
 
 | 快捷键  | 作用     |
 | ------- | -------- |
 | cmd + E | 最近修改 |
-### atom 快捷键
+## atom 快捷键
 
+## 附件1：.bash_profile
+2020.03.12 backup:  
+```
+# publish book automate -- by easter
+alias bookgo="git add . && git commit -m 'Auot-update' && git pull --rebase && git push origin master && npm run docs && gh-pages -d website/build/blingbling"
+
+# public gitbook to gh-pages in one tap -- by easter
+alias puu="gitbook build && gh-pages -d _book"
+
+# java
+export JAVA_HOME=$(/usr/libexec/java_home)
+
+# nvm
+source ~/.nvm/nvm.sh
+export NVM_DIR="/Users/easterfan/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# PSQL
+export PSQL_HOME=/Applications/Postgres.app/Contents/Versions/9.6
+
+# redis
+export PATH=$PATH:$HOME/Software/redis-5.0.6/src
+
+# idea
+alias idea='open -a IntelliJ\ IDEA'
+
+# forbidden homebrew update -- by easter
+export HOMEBREW_NO_AUTO_UPDATE=true
+
+# autojump --by easter
+  [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
+
+# git alias -- by easter
+alias gs='git status'
+alias ga='git add'
+alias ga.='git add .'
+alias gc='git commit -m '
+alias gcno='git commit --amend --no-edit'
+
+
+alias gpr='git pull --rebase'
+alias gpu='git push origin master'
+
+alias gsl='git stash list'
+alias gsa='git stash save '
+alias gsp='git stash pop'
+
+alias ghi="git log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short"
+```
 
 ## 参考
 - [PicGo 文档](https://picgo.github.io/PicGo-Doc/zh/guide/)

@@ -6,7 +6,7 @@
 * [dev 环境配置](dev-environment.md)
 * [那些用的很顺手的软件](useful-software.md)
 
-# java SE 基础
+# JavaSE
 * [java8 新特性 - 函数式编程](java8.md)
 
 
