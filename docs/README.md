@@ -6,6 +6,7 @@
 * [dev 环境配置](dev-environment.md)
 * [用好 IDEA](use-idea.md)
 * [那些用的很顺手的软件](useful-software.md)
+* [被各路大佬安利的必读但来不及读的书单](read-those-books.md)
 
 ## JavaSE
 * [java8 新特性 - 函数式编程](java8.md)
