@@ -9,7 +9,8 @@
 * [被各路大佬安利的必读但来不及读的书单](read-those-books.md)
 
 ## JavaSE
-* [java8 新特性 - 函数式编程](java8.md)
+- [JavaSE 知识点总结](back-end/javase/README.md)
+- [java8 新特性 - 函数式编程](java8.md)
 
 
 ## 工具
