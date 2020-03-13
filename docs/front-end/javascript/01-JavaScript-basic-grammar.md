@@ -24,7 +24,7 @@
 ```
 
 ## 3. 数据类型
-Javascript 的简单数据类型只有 5 种（相比于 java 有 8 种），判断数据类型的关键字是 typeof，和 java 的 instanceof 相对应。
+Javascript 的简单数据类型只有 5 种（相比于 java 有 6 种），判断数据类型的关键字是 typeof，和 java 的 instanceof 相对应。
 
 ![五种数据类型](https://raw.githubusercontent.com/EasterFan/PicGo/master/blingbling/2020/datastruct.png)  
 ![type检查变量数据类型](https://raw.githubusercontent.com/EasterFan/PicGo/master/blingbling/2020/typeCheckDatastructure.png)  
