@@ -12,6 +12,7 @@
 - [Lombok](use-lombok.md)
 
 <!-- # 前端 -->
+- [JavaScript 知识点总结](front-end/javascript/README.md)
 - [nodejs 基础](node-basic.md)
 
 <!-- # 框架 -->
