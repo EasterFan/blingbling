@@ -20,25 +20,50 @@ System Preferences > Date & Time > Clock > Show date
 
 ### 光标加速 - 把 Key Repeat 和 Delay Until Repeat 拉到最右
 System Preferences > Keyboard
+
+### 配置 Dock，只显示已打开应用，减少干扰
+defaults write com.apple.dock static-only -boolean true; killall Dock
+### 【撤销】配置 Dock，只显示已打开应用，减少干扰
+defaults delete com.apple.dock static-only; killall Dock
 ```
 
 ## 优化 Homebrew
 homebrew 是 mac 下的包管理器，可以方便的安装一些 Unix 软件，拿到 mac 的第一件事就是安装 homebrew
 
-```
+brew 和 brew cask 都可以安装软件，两者的区别是：  
+brew 下载的是源码解压，然后在本地 `./configure && make install `, 同时会包含相关依存库。偏开发向
+
+brew cask 直接下载已经编译好的应用包（.dmg/.pkg）,然后解压到本地运行，通常是带 GUI 界面的软件。偏生活向。
+
+```bash
 # 安装 homebrew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # 验证
 brew doctor
 brew --version
+
+# 关闭 homebrew 自动更新 - 需要时候再手动更新
+vim ~/.bash_profile
+export HOMEBREW_NO_AUTO_UPDATE=true
+
+brew search xxx # 搜索
+brew list --versions / brew cask list # 查看安装过的包列表，同时显示版本号
+brew update # 更新 brew
+brew upgrade <package_name> # 更新用brew安装的软件
+brew cleanup # 清理旧版本的包缓存时，清除安装包
+brew cask cleanup # 清除安装包
+brew doctor # 检测
+brew outdated # 看一下哪些软件可以升级
+brew info xxx # 查看某个软件信息
+brew cask info xxx # 查看某个软件信息
+brew uninstall mongod
 ```
 
-关闭 homebrew 自动更新  
-vim ~/.bash_profile
-export HOMEBREW_NO_AUTO_UPDATE=true   
-`brew update` 需要的时候再手动更新homebrew
-
+默认 `Alfred` 是不会搜索到 `HomeBrew Cask` 安装的软件的，所以需要额外执行这个命令关联起来：  
+```bash
+brew cask alfred link
+```
 
 # 二. Git 环境
 Mac 有内嵌的 Git，但是在更新时不方便，所以需要用 homebrew 安装并更新 git
@@ -182,6 +207,18 @@ cnpm -v
 
 
 ## 命令行环境
+```bash
+# 查看当前终端使用的 shell
+echo $SHELL
+# 查看所有 shell
+cat /etc/shells
+
+# 修改为 zsh
+chsh -s /bin/zsh
+```
+
+
+
 ### 修改 bash 配置文件
 原来的配置文件都写在 `.bash_profile` 里，但 iterm 依赖的 zsh 在登陆的时候默认只会加载 `~/.zshrc`,导致每次都要手动刷新配置文件，解决方法是编辑`~/.zshrc`：
 

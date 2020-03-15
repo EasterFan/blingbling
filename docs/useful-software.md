@@ -13,9 +13,8 @@
 
 ## 快速安装所有软件
 ```bash
-brew cask install shiftit
-brew cask install iterm2
-brew cask install alfred
+# 一键装机
+brew cask install google-chrome shiftit iterm2 alfred intellij-idea vlc sogouinput licecap picgo neteasemusic atom obs
+
 brew install autojump
-brew cask install intellij-idea
 ```
