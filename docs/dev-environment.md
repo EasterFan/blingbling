@@ -52,7 +52,6 @@ brew list --versions / brew cask list # 查看安装过的包列表，同时显�
 brew update # 更新 brew
 brew upgrade <package_name> # 更新用brew安装的软件
 brew cleanup # 清理旧版本的包缓存时，清除安装包
-brew cask cleanup # 清除安装包
 brew doctor # 检测
 brew outdated # 看一下哪些软件可以升级
 brew info xxx # 查看某个软件信息
