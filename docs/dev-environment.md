@@ -44,7 +44,7 @@ brew doctor
 brew --version
 
 # 关闭 homebrew 自动更新 - 需要时候再手动更新
-vim ~/.bash_profile
+vim ~/.zshrc
 export HOMEBREW_NO_AUTO_UPDATE=true
 
 brew search xxx # 搜索
@@ -100,7 +100,30 @@ ssh-add ~/.ssh/test_github
 ssh -vT git@github.com
 ```
 
-2. 复制公钥  
+2. 改名后在 `.ssh/` 下新建 config 文件指定对应的私钥
+`cd ~/.ssh && touch config`
+
+```bash
+host git.custom.com
+user git
+hostname git.custom.com
+port 22
+identityfile ~/.ssh/custom_git
+
+host github.com
+user git
+hostname github.com
+port 22
+identityfile ~/.ssh/me_git
+
+host gitlab.com
+user git
+hostname gitlab.com
+port 22
+identityfile ~/.ssh/gitlab_git
+```
+
+3. 复制公钥  
 将test-github.pub文件的内容添加到github的“SSH KEYS”里面
 
 

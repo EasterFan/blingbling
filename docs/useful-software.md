@@ -13,8 +13,13 @@
 
 ## 快速安装所有软件
 ```bash
-# 一键装机
-brew cask install google-chrome shiftit iterm2 alfred intellij-idea vlc sogouinput licecap picgo neteasemusic atom obs
+# 同步 ss 环境
+brew cask clashx
+
+
+
+# ss 环境就位后，一键装机
+brew cask install google-chrome shiftit iterm2 alfred intellij-idea vlc sogouinput licecap picgo neteasemusic atom obs firefox baiducloud postman xmind keepassx nutstore
 
 brew install autojump
 ```
