@@ -23,6 +23,17 @@ System Preferences > Keyboard
 ```
 
 ## 优化 Homebrew
+homebrew 是 mac 下的包管理器，可以方便的安装一些 Unix 软件，拿到 mac 的第一件事就是安装 homebrew
+
+```
+# 安装 homebrew
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+# 验证
+brew doctor
+brew --version
+```
+
 关闭 homebrew 自动更新  
 vim ~/.bash_profile
 export HOMEBREW_NO_AUTO_UPDATE=true   
