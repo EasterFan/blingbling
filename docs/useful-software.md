@@ -14,12 +14,12 @@
 ## 快速安装所有软件
 ```bash
 # 同步 ss 环境
-brew cask clashx
+brew cask install clashx
 
 
 
 # ss 环境就位后，一键装机
-brew cask install google-chrome shiftit iterm2 alfred intellij-idea vlc sogouinput licecap picgo neteasemusic atom obs firefox baidunetdisk postman xmind keepassx nutstore
+brew cask install google-chrome shiftit iterm2 alfred intellij-idea vlc sogouinput licecap picgo neteasemusic atom obs firefox baidunetdisk postman xmind keepassx nutstore evernote
 
-brew install autojump
+brew install autojump jenv
 ```

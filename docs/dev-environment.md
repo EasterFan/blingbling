@@ -229,7 +229,7 @@ jenv which java # 查看当前版本jdk的路径
 ```
 [JDK 官网下载](https://www.oracle.com/java/technologies/oracle-java-archive-downloads.html)
 
-安装完成 jdk 后，查看安装目录,然后将睦邻居添加到 jenv：
+安装完成 jdk 后，查看安装目录,然后将目录添加到 jenv：
 ```bash
 /usr/libexec/java_home -V
 ```
@@ -355,9 +355,11 @@ alias bookgo="git add . && git commit -m 'Auot-update' && git pull --rebase && g
 表格功能： [markdown-table-editor](https://atom.io/packages/markdown-table-editor)  
 ![](https://raw.githubusercontent.com/wiki/susisu/atom-markdown-table-editor/images/demo.gif)    
 
-粘贴图片改路径：Markdown-img-paste -- 在 settings 中设置图片路径(超级喜欢!)  
+粘贴图片改路径：markdown-image-paste -- by nmecad  但是用 picgo 以后就很少用到本地图片了
 
 同步预览：markdown-scroll-sync
+
+自动生成 toc ：markdown-toc-auto - by t9md
 ### 常用快捷键
 
 ## 3. Github + Picgo 搭建个人图床
