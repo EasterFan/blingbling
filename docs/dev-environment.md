@@ -13,10 +13,17 @@
   - [安装 nvm](#安装-nvm)
   - [安装 node](#安装-node)
   - [淘宝 cnpm 加速](#淘宝-cnpm-加速)
-- [五. ss 环境](#五-ss-环境)
-  - [命令行环境](#命令行环境)
-    - [修改 bash 配置文件](#修改-bash-配置文件)
-    - [科学命令行](#科学命令行)
+- [五. 终端环境](#五-终端环境)
+  - [安装 iterm 、Iterm 主题配色](#安装-iterm-iterm-主题配色)
+  - [配置 Oh my zsh](#配置-oh-my-zsh)
+  - [配置 Meslo 字体](#配置-meslo-字体)
+  - [语法高亮](#语法高亮)
+  - [安装自动填充插件](#安装自动填充插件)
+  - [其他设置](#其他设置)
+    - [左右键跳转](#左右键跳转)
+    - [隐藏用户名和主机名](#隐藏用户名和主机名)
+    - [iterm2 快速显示](#iterm2-快速显示)
+  - [iterm 快捷键](#iterm-快捷键)
 - [六. gitbook 环境](#六-gitbook-环境)
   - [1. gitbook](#1-gitbook)
   - [2. atom 环境](#2-atom-环境)
@@ -287,50 +294,119 @@ cnpm -v
 
 
 
-# 五. ss 环境
+# 五. 终端环境
+> 平时用终端用的很多，mac 自带的终端不够用，iterm2 可以完全代替 terminal，并且结合 `zsh + oh-my-zsh` 代替配置。
+
+最终配置效果是这样滴！
 
 
-## 命令行环境
+## 安装 iterm 、Iterm 主题配色
+
 ```bash
+brew cask install iterm2
+
 # 查看当前终端使用的 shell
 echo $SHELL
+
 # 查看所有 shell
 cat /etc/shells
 
 # 修改为 zsh
 chsh -s /bin/zsh
 ```
+终端主题里我比较喜欢的是 Solarized Dark theme，下载地址：http://ethanschoonover.com/solarized
 
+将下载的配色解压后，导入到 iterm 中，  
+`Command + ,` 打开配置页面，然后`Profiles -> Colors -> Color Presets -> Import`,选择解压的 `solarized->iterm2-colors-solarized->Solarized Dark.itermcolors` 文件，导入成功，最后选择  Solarized Dark 主题，就可以了。  
 
+![](https://raw.githubusercontent.com/EasterFan/PicGo/master/blingbling/2020/20200316153801.png)
 
-### 修改 bash 配置文件
-原来的配置文件都写在 `.bash_profile` 里，但 iterm 依赖的 zsh 在登陆的时候默认只会加载 `~/.zshrc`,导致每次都要手动刷新配置文件，解决方法是编辑`~/.zshrc`：
+## 配置 Oh my zsh
+
+Oh My Zsh 是对主题的进一步扩展，地址：https://github.com/robbyrussell/oh-my-zsh
+
+一键安装：
+
+```
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+```
+安装好之后，编辑 `.zshrc`，将主题配置修改为`agnoster`，这个主题是比较常用的 zsh 主题，也可以到 https://github.com/robbyrussell/oh-my-zsh/wiki/themes 去选自己喜欢的主题。  
 
 ```bash
-# 打开 zshrc
 vim ~/.zshrc
-
-# 添加关联 bash_profile
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-source $HOME/.bash_profile
-
-# 刷新
-source ~/.zshrc
+ZSH_THEME="agnoster"
 ```
 
+## 配置 Meslo 字体
+到这里终端基本上就配置好了，但是使用`agnoster` 主题，需要 Meslo 字体的支持，否则会出现中文乱码，下载字体的地址：https://github.com/powerline/fonts/blob/master/Meslo%20Slashed/Meslo%20LG%20M%20Regular%20for%20Powerline.ttf  
 
+**下载之后一定要双击安装字体！！**
+然后打开 iterm 配置 `Command + ,` 在 `Profiles -> Text -> Font ` 选项下，选择  Meslo LG M Regular for Powerline 字体。
 
-### 科学命令行
-`brew cask install iterm2`
+![](https://raw.githubusercontent.com/EasterFan/PicGo/master/blingbling/2020/2020-03-16-at-15-45.png)
 
-现在速度十几k：  
+## 语法高亮
+就是像最后效果图一样，对特殊命令和错误命令，会有高亮显示，拯救我的老花眼 QAQ~
+
 ```bash
-Cloning into 'taro'...
-remote: Enumerating objects: 132, done.
-remote: Counting objects: 100% (132/132), done.
-remote: Compressing objects: 100% (96/96), done.
-Receiving objects:  29% (24766/82792), 11.51 MiB | 17.00 KiB/s
+# 安装高亮插件
+brew install zsh-syntax-highlighting
+
+# 在 zsh 中刷新
+vim ~/.zshrc
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ```
+
+## 安装自动填充插件
+炒鸡实用的命令自动补全插件：  
+
+```bash
+# 下载项目
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+
+# 配置
+vim ~/.zshrc
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+```
+
+## 其他设置
+### 左右键跳转
+主要是按住`option + →`，在命令的开始和结尾跳转
+打开 iTerm2，按Command + ,键，打开 Preferences 配置界面，然后 `Profiles → Keys → Load Preset... → Natural Text Editing`，就可以了。  
+
+### 隐藏用户名和主机名
+用户名太长，可以在 zsh 里面改，也可以在 `共享 -> 更改用户名`  
+
+```bash
+vim ~/.zshrc
+DEFAULT_USER="easterfan"
+```
+
+### iterm2 快速显示
+配合 iterm 开机自启效果更佳  
+
+![](https://raw.githubusercontent.com/EasterFan/PicGo/master/blingbling/2020/20200316162755.png)
+
+
+
+## iterm 快捷键
+command + t	新建标签
+command + w	关闭标签
+command + 数字 command + 左右方向键	切换标签
+command + enter	切换全屏
+command + f	查找
+command + d	垂直分屏
+command + shift + d	水平分屏
+command + option + 方向键 command + [ 或 command + ]	切换屏幕
+command + ;	查看历史命令
+command + shift + h	查看剪贴板历史
+ctrl + u	清除当前行
+ctrl + l	清屏
+ctrl + a	到行首
+ctrl + e	到行尾
+ctrl + f/b	前进后退
+ctrl + p	上一条命令
+ctrl + r	搜索命令历史
 
 
 # 六. gitbook 环境
