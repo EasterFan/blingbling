@@ -1,10 +1,42 @@
-<!-- ---
-title: 开发环境准备
---- -->
-
-# 开发环境准备
-
 > 话说，工欲善其事，必先利其器
+
+<!-- TOC START min:1 max:3 link:true asterisk:false update:true -->
+- [一. 系统优化](#一-系统优化)
+  - [基本设置](#基本设置)
+  - [优化 Homebrew](#优化-homebrew)
+- [二. Git 环境](#二-git-环境)
+  - [安装 Git 并升级至最新版](#安装-git-并升级至最新版)
+  - [SSH密钥配置](#ssh密钥配置)
+  - [配置用户名和密码](#配置用户名和密码)
+- [三. Java 环境](#三-java-环境)
+- [四. nodejs 环境](#四-nodejs-环境)
+  - [安装 nvm](#安装-nvm)
+  - [安装 node](#安装-node)
+  - [淘宝 cnpm 加速](#淘宝-cnpm-加速)
+- [五. ss 环境](#五-ss-环境)
+  - [命令行环境](#命令行环境)
+    - [修改 bash 配置文件](#修改-bash-配置文件)
+    - [科学命令行](#科学命令行)
+- [六. gitbook 环境](#六-gitbook-环境)
+  - [1. gitbook](#1-gitbook)
+  - [2. atom 环境](#2-atom-环境)
+    - [常用插件](#常用插件)
+    - [常用快捷键](#常用快捷键)
+  - [3. Github + Picgo 搭建个人图床](#3-github--picgo-搭建个人图床)
+    - [配置 github](#配置-github)
+    - [配置 PicGo](#配置-picgo)
+  - [4. 设置定时任务](#4-设置定时任务)
+    - [在项目目录新建脚本`bookgo.sh`](#在项目目录新建脚本bookgosh)
+    - [新建 plist 定时任务](#新建-plist-定时任务)
+    - [加载命令](#加载命令)
+- [七. 清理环境](#七-清理环境)
+- [快捷键管理](#快捷键管理)
+  - [Mac 自带快捷键](#mac-自带快捷键)
+  - [idea 快捷键](#idea-快捷键)
+  - [atom 快捷键](#atom-快捷键)
+  - [附件1：.bash_profile](#附件1bash_profile)
+  - [参考](#参考)
+<!-- TOC END -->
 
 # 一. 系统优化
 ## 基本设置
@@ -170,9 +202,39 @@ chmod 777 script.sh && ./script.sh
 # 正确历史 force 推送
 git push --force --tags origin 'refs/heads/*'
 ```
+# 三. Java 环境
+sdkman 是个很方便的工具，但现在不支持 oracle jdk 了，所以还是用 jenv 管理 JDK 版本。
+
+```bash
+#  安装 jenv
+brew install jenv
+
+# 配置
+vim ~/.zshrc
+echo 'export PATH="$HOME/.jenv/bin:$PATH"'
+echo 'eval "$(jenv init -)"'
+
+# 查看 java 版本
+jenv versions
 
 
-# 三. nodejs 环境
+# 添加 jdk1.8
+ jenv add /Library/Java/JavaVirtualMachines/jdk1.8.0_231.jdk/Contents/Home
+
+# 管理 jdk
+jenv remove 1.8.0.231 # 移除指定版本jdk
+jenv local 1.8.0.231 # 选择一个jdk版本
+jenv global 1.8.0.231 # 设置默认的jdk版本
+jenv which java # 查看当前版本jdk的路径
+```
+[JDK 官网下载](https://www.oracle.com/java/technologies/oracle-java-archive-downloads.html)
+
+安装完成 jdk 后，查看安装目录,然后将睦邻居添加到 jenv：
+```bash
+/usr/libexec/java_home -V
+```
+
+# 四. nodejs 环境
 > 安装nvm-----配置nvm环境变量----安装node ----淘宝cnpm加速
 
 ## 安装 nvm
@@ -225,7 +287,7 @@ cnpm -v
 
 
 
-# 四. ss 环境
+# 五. ss 环境
 
 
 ## 命令行环境
@@ -271,7 +333,7 @@ Receiving objects:  29% (24766/82792), 11.51 MiB | 17.00 KiB/s
 ```
 
 
-# 五. gitbook 环境
+# 六. gitbook 环境
 
 ## 1. gitbook
 ```bash
@@ -404,7 +466,7 @@ plist 文件存放路径为/Library/LaunchAgents或/Library/LaunchDaemons，前�
 # 结束任务
  launchctl stop  com.easter.bookgo.plist
 ```
-# 六. 清理环境
+# 七. 清理环境
 
 
 # 快捷键管理
