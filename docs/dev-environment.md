@@ -17,7 +17,6 @@
   - [安装 iterm 、Iterm 主题配色](#安装-iterm-iterm-主题配色)
   - [配置 Oh my zsh](#配置-oh-my-zsh)
   - [配置 Meslo 字体](#配置-meslo-字体)
-  - [语法高亮](#语法高亮)
   - [安装自动填充插件](#安装自动填充插件)
   - [其他设置](#其他设置)
     - [左右键跳转](#左右键跳转)
@@ -345,24 +344,16 @@ ZSH_THEME="agnoster"
 
 ![](https://raw.githubusercontent.com/EasterFan/PicGo/master/blingbling/2020/2020-03-16-at-15-45.png)
 
-## 语法高亮
-就是像最后效果图一样，对特殊命令和错误命令，会有高亮显示，拯救我的老花眼 QAQ~
-
-```bash
-# 安装高亮插件
-brew install zsh-syntax-highlighting
-
-# 在 zsh 中刷新
-vim ~/.zshrc
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-```
 
 ## 安装自动填充插件
-炒鸡实用的命令自动补全插件：  
+炒鸡实用的命令自动补全插件 + 语法高亮插件（拯救老花眼）：  
 
 ```bash
-# 下载项目
+# 下载自动填充插件
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+
+# 下载高亮插件
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
 # 配置
 vim ~/.zshrc
