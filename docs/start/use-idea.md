@@ -12,6 +12,11 @@ http://color-themes.com/ 或者 **material theme ui** 插件(方便！)
 界面设置：File-->Settings-->Build,Execution,Deployment-->Compiler， 勾选 Compiler中`Build project automatically`
 
 
+### 设置 code-style
+添加 google-code-style, [在这里下载 https://github.com/google/styleguide/blob/gh-pages/intellij-java-google-style.xml](https://github.com/google/styleguide/blob/gh-pages/intellij-java-google-style.xml)  
+
+![](https://raw.githubusercontent.com/EasterFan/PicGo/master/blingbling/2020/20200317144632.png)
+
 ### 设置显示文件tabs左显示
 界面设置File-->Settings-->Editor--> general--> Editor Tabs,在 Placement 设置Left以及Tab limit为20即可。
 

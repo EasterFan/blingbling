@@ -447,7 +447,7 @@ docsify serve docs
 
 ### 配置 PicGo
 
-
+![](https://raw.githubusercontent.com/EasterFan/PicGo/master/blingbling/2020/20200317143911.png)
 
 
 ## 4. 设置定时任务
