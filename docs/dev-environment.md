@@ -24,7 +24,7 @@
     - [iterm2 快速显示](#iterm2-快速显示)
   - [iterm 快捷键](#iterm-快捷键)
 - [六. gitbook 环境](#六-gitbook-环境)
-  - [1. gitbook](#1-gitbook)
+  - [1. gitbook 版 + docsify 版](#1-gitbook-版--docsify-版)
   - [2. atom 环境](#2-atom-环境)
     - [常用插件](#常用插件)
     - [常用快捷键](#常用快捷键)
@@ -402,7 +402,7 @@ ctrl + r	搜索命令历史
 
 # 六. gitbook 环境
 
-## 1. gitbook
+## 1. gitbook 版 + docsify 版
 ```bash
 # 先推送一版源码，再初始化创建分支并推动远程
 git checkout -b gh-pages
@@ -415,6 +415,16 @@ bookgo
 ```bash
 # public gitbook to gh-pages in one tap -- by easter
 alias bookgo="git add . && git commit -m 'Auot-update' && git pull --rebase && git push origin master && npm run docs && gh-pages -d website/build/blingbling"
+```
+
+docsify 太强了，后面文档都迁移到 docsify 了，安装部署秒  
+```bash
+#  安装 docsify
+npm i docsify-cli -g
+# 初始化
+docsify init ./docs
+#启动
+docsify serve docs
 ```
 
 ## 2. atom 环境

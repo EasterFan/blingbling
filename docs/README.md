@@ -7,6 +7,7 @@
 * [用好 IDEA](use-idea.md)
 * [那些用的很顺手的软件](useful-software.md)
 * [被各路大佬安利的必读但来不及读的书单](read-those-books.md)
+* [github 上有趣有意思的开源项目](start/intresting-github-repo-index.md)
 
 ## JavaSE
 - [JavaSE 知识点总结](back-end/javase/README.md)
@@ -32,3 +33,5 @@
 - [ ] mysql 复盘总结
 - [ ] springboot 知识点梳理
 - [ ] docker 复盘总结
+
+docsify serve docs
