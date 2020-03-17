@@ -1,0 +1,23 @@
+{
+  "name": "blingbling",
+  "version": "1.0.0",
+  "description": "study hard, play hard",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "docsify serve ./  --port 9999"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/easterfan/blingbling.git"
+  },
+  "keywords": [
+    "study"
+  ],
+  "author": "easterfan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/easterfan/blingbling/issues"
+  },
+  "homepage": "https://github.com/easterfan/blingbling#readme"
+}
