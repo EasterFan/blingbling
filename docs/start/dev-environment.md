@@ -326,6 +326,7 @@ Oh My Zsh 是对主题的进一步扩展，地址：https://github.com/robbyruss
 
 一键安装：
 
+**安装 oh-my-zsh 后，会自动生成一个 `.zshrc` 文件，原来使用的 zsh 配置会被重命名成 `.zshrc.pre-oh-my-zsh`, 配置并没有丢，嘻嘻**
 ```
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
