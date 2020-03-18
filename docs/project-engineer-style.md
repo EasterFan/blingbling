@@ -8,6 +8,7 @@
 - LICENSE - 开源协议
 
 # 代码风格规范
-- code-style
+- google-code-style
+- 阿里巴巴开发手册 - https://github.com/alibaba/p3c
 - lombok
 - 重构

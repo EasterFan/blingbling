@@ -16,10 +16,11 @@
 # 同步 ss 环境
 brew cask install clashx
 
-
-
 # ss 环境就位后，一键装机
-brew cask install google-chrome shiftit iterm2 alfred intellij-idea vlc sogouinput licecap picgo neteasemusic atom obs firefox baidunetdisk postman xmind keepassx nutstore evernote
+brew cask install google-chrome shiftit iterm2 alfred intellij-idea vlc sogouinput licecap picgo neteasemusic atom obs firefox baidunetdisk postman xmind keepassx nutstore evernote cheatsheet calibre
+
+# 一些小工具
+brew cask install qlmarkdown qlcolorcode
 
 brew install autojump jenv
 ```
