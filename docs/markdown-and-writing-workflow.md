@@ -9,3 +9,6 @@
 * [X] github 挂件
 * [ ] 代码高亮 （支持 Prism，但是还可以高亮一下）
 * [X] 主题切换
+
+修改后的 docsify 样式
+https://github.com/epochwz/docsify-plus.git

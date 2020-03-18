@@ -23,3 +23,9 @@ brew cask install google-chrome shiftit iterm2 alfred intellij-idea vlc sogouinp
 
 brew install autojump jenv
 ```
+
+
+# 参考
+- https://github.com/qianguyihao/Mac
+- https://github.com/jaywcjlove/awesome-mac/blob/master/README-zh.md
+- https://github.com/iCHAIT/awesome-macOS
