@@ -371,7 +371,22 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 ```bash
 vim ~/.zshrc
-DEFAULT_USER="easterfan"
+# 隐藏主机名和用户名
+prompt_context() {}
+
+# 显示用户名，隐藏主机名
+prompt_context() {
+  if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
+    prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
+  fi
+}
+
+# 显示主机名，隐藏用户名
+prompt_context() {
+  if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
+    prompt_segment black default "%(!.%{%F{yellow}%}.)$HOST"
+  fi
+}
 ```
 
 ### iterm2 快速显示
