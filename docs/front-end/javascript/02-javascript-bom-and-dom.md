@@ -1,6 +1,7 @@
 > BOM 和 DOM 对象
 
 <!-- TOC START min:1 max:3 link:true asterisk:false update:true -->
+- [DOM 和 BOM 的联系](#dom-和-bom-的联系)
 - [BOM 7 个对象](#bom-7-个对象)
   - [1. window对象](#1-window对象)
   - [2. location对象](#2-location对象)
@@ -9,9 +10,9 @@
   - [5. naigator对象](#5-naigator对象)
 - [DOM 元素](#dom-元素)
 - [DOM 事件](#dom-事件)
-- [DOM 和 BOM 的联系](#dom-和-bom-的联系)
 <!-- TOC END -->
 
+# DOM 和 BOM 的联系
 
 # BOM 7 个对象
 什么是BOM？  
@@ -181,5 +182,3 @@ console.log(Navigator.userAgent);
 
 
 # DOM 事件
-
-# DOM 和 BOM 的联系
