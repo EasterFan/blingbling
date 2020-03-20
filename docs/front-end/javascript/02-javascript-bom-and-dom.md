@@ -13,6 +13,12 @@
 <!-- TOC END -->
 
 # DOM 和 BOM 的联系
+DOM（document object model）：文档对象模型，提供操作页面元素的方法和属性  
+BOM（browser object model）；浏览器对象模型，提供一些属性和方法可以操作浏览器  
+
+![](https://raw.githubusercontent.com/EasterFan/PicGo/master/blingbling/2020/20200320094228.png)
+
+如图，DOM 的根节点是 BOM 的子节点，即通过 BOM 的 window 对象可以调用 DOM 的属性和方法，DOM 是 BOM 的子集
 
 # BOM 7 个对象
 什么是BOM？  
@@ -179,6 +185,20 @@ console.log(Navigator.userAgent);
 ```
 
 # DOM 元素
+可以将一个 html 文档看做一个 DOM 树，html 文档中的标签是 DOM 树的节点（Node），js 通过 DOM 树获取到 DOM 元素，并对 DOM 元素进行增删查改操作。
 
+![](https://raw.githubusercontent.com/EasterFan/PicGo/master/blingbling/2020/20200320100440.png)
+
+获取 DOM 元素的方法：  
+| 方法           | 语法                     | 说明                                                         |
+| -------------- | ------------------------ | ------------------------------------------------------------ |
+| 通过 ID        | getElementById()         | 返回带有指定 ID 的元素                                       |
+| 通过标签名     | getElementsByTagName()   | 返回带有指定标签名的所有元素，返回的是一个类数组对象         |
+| 通过 name 属性 | getElementsByName()      | 返回指定 name 属性值的所有子集合元素，返回的是一个类数组对象 |
+| 通过 CSS 类    | getElementsByClassName() | 返回指定 class  名称的元素                                   |
 
 # DOM 事件
+
+# 参考
+- https://juejin.im/post/5d7677b06fb9a06afd662d20
+- https://segmentfault.com/a/1190000000654274

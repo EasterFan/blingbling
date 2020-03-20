@@ -17,14 +17,12 @@
 brew cask install clashx
 
 # ss 环境就位后，一键装机
-brew cask install google-chrome shiftit iterm2 alfred intellij-idea vlc sogouinput licecap picgo neteasemusic atom obs firefox baidunetdisk postman xmind keepassx nutstore evernote cheatsheet calibre
+brew cask install google-chrome shiftit iterm2 snipaste intellij-idea vlc sogouinput licecap picgo neteasemusic atom obs firefox baidunetdisk postman xmind keepassx nutstore evernote cheatsheet calibre
 
-# 一些小工具
-brew cask install qlmarkdown qlcolorcode
 
 brew install autojump jenv
 ```
-
+在 `系统偏好设置 -> 用户 -> 登陆项` 设置软件开机自启
 
 # 参考
 - https://github.com/qianguyihao/Mac
