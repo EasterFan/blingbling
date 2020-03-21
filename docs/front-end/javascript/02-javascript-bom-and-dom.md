@@ -10,6 +10,7 @@
   - [5. naigator对象](#5-naigator对象)
 - [DOM 元素](#dom-元素)
 - [DOM 事件](#dom-事件)
+- [参考](#参考)
 <!-- TOC END -->
 
 # DOM 和 BOM 的联系
@@ -190,6 +191,7 @@ console.log(Navigator.userAgent);
 ![](https://raw.githubusercontent.com/EasterFan/PicGo/master/blingbling/2020/20200320100440.png)
 
 获取 DOM 元素的方法：  
+
 | 方法           | 语法                     | 说明                                                         |
 | -------------- | ------------------------ | ------------------------------------------------------------ |
 | 通过 ID        | getElementById()         | 返回带有指定 ID 的元素                                       |

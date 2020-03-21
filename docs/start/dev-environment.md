@@ -452,6 +452,8 @@ docsify serve docs
 
 同步预览：markdown-scroll-sync
 
+markdown 增强预览：markdown-preview-enhanced
+
 自动生成 toc ：markdown-toc-auto - by t9md
 ### 常用快捷键
 
