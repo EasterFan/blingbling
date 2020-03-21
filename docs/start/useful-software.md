@@ -17,7 +17,7 @@
 brew cask install clashx
 
 # ss 环境就位后，一键装机
-brew cask install google-chrome shiftit iterm2 snipaste intellij-idea vlc sogouinput licecap picgo neteasemusic atom obs firefox baidunetdisk postman xmind keepassx nutstore evernote cheatsheet calibre
+brew cask install google-chrome shiftit iterm2 snipaste intellij-idea vlc sogouinput licecap picgo neteasemusic atom obs firefox baidunetdisk postman xmind keepassx nutstore evernote cheatsheet calibre the-unarchiver
 
 
 brew install autojump jenv

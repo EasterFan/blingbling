@@ -17,7 +17,10 @@
 ## 工具
 - [Lombok 踩坑](use-lombok.md)
 - [Git 基础操作 - add、commit、stash、branch](devops/git/git-basic.md)
-- [Git 多模块开发](devops/git/git.md)
+- [Git 多模块开发](devops/git/git-submodule.md)
+- [Git 变基操作保持 commit 简洁](devops/git/git-rebase.md)
+
+- [ops 基础 - ECS/OSS/CDN/SSL](devops/ops_basic/ops-basic.md)
 - [docker 容器部署]()
 
 ## 前端
