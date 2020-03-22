@@ -464,9 +464,11 @@ markdown 增强预览：markdown-preview-enhanced
 - 在公共仓库的`settings/developers settings`找到生成 token，也可直接访问 [https://github.com/settings/tokens/new](https://github.com/settings/tokens/new)
 
 ### 配置 PicGo
+**github-plus** 是一个可以代替 picgo 原生 github 图床的插件，可以快捷的上传图片到图床，最强大的是同步远程图床，实现在本地删除图片，远程也同步删除的功能。  
 
-![](https://raw.githubusercontent.com/EasterFan/PicGo/master/blingbling/2020/20200317143911.png)
+![](https://raw.githubusercontent.com/easterfan/picgo/master/blingbling/2020/20200322092438.png)  
 
+其中 customUrl: https://raw.githubusercontent.com/用户名/仓库名/master
 
 ## 4. 设置定时任务
 > launchctl是一个统一的服务管理框架，可以启动、停止和管理守护进程、应用程序、进程和脚本等。
