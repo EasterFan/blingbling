@@ -88,7 +88,7 @@
 
     <script>
       window.$docsify = {
-        name: 'doc-project-template',
+        name: 'blingbling',
         // repo: 'https://github.com/easterfan/blingbling',
         logo: 'http://dunwu.test.upcdn.net/common/logo/zp_100_100.png',
         themeColor: '#6190E8',
@@ -152,6 +152,22 @@
             });
         });
       </script>
+
+      <!--插入“gitalk评论”模块-->
+  <script src="//unpkg.com/docsify/lib/plugins/gitalk.min.js"></script>
+  <script src="//unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script src="js/md5.min.js"></script>
+  <script>
+    const gitalk = new Gitalk({
+      clientID: '27587fa2407409291a85',
+      clientSecret: '4b6fb3ee146161c59698ee7019649c437922adb4',
+      repo: 'blingbling',
+      owner: 'easterfan',
+      admin: ['easterfan'],
+      id: location.pathname,      // Ensure uniqueness and length less than 50
+      distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+  </script>
 
 
   </body>
