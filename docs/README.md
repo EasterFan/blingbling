@@ -39,3 +39,6 @@
 - [ ] mysql 复盘总结
 - [ ] springboot 知识点梳理
 - [ ] docker 复盘总结
+
+知易行难！  
+![GitHub Chart](https://ghchart.rshah.org/easterfan)

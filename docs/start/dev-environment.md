@@ -85,16 +85,6 @@ brew --version
 vim ~/.zshrc
 export HOMEBREW_NO_AUTO_UPDATE=true
 
-brew search xxx # 搜索
-brew list --versions / brew cask list # 查看安装过的包列表，同时显示版本号
-brew update # 更新 brew
-brew upgrade <package_name> # 更新用brew安装的软件
-brew cleanup # 清理旧版本的包缓存时，清除安装包
-brew doctor # 检测
-brew outdated # 看一下哪些软件可以升级
-brew info xxx # 查看某个软件信息
-brew cask info xxx # 查看某个软件信息
-brew uninstall mongod
 ```
 
 默认 `Alfred` 是不会搜索到 `HomeBrew Cask` 安装的软件的，所以需要额外执行这个命令关联起来：  
@@ -102,6 +92,60 @@ brew uninstall mongod
 brew cask alfred link
 ```
 
+### 【查】看软件
+```bash
+# 查找软件
+brew search xxx
+
+# 查看安装包的依赖关系，然后安全删除
+brew deps --installed --tree # 查看已安装的包的依赖，树形显示
+
+# 查看安装信息
+brew info  # 查看整体信息
+brew info xxx / brew cask info xxx # 查看某个软件信息
+brew list --versions / brew cask list # 查看安装过的包列表，同时显示版本号
+
+# 看一下哪些软件可以升级
+brew outdated
+
+# 查看 homebrew 状态
+brew doctor
+
+# 查看可清理的旧版本包，不执行实际操作
+brew cleanup -n        
+```
+
+### 【增】homebrew 安装旧版软件
+> 一般新版的软件都会兼容老版本，但是软件迭代太凶猛的时候，经常出现升级到新版本奔溃的问题，所以有时候还是需要安装老版本以维稳
+
+```bash
+# 安装指定版本
+brew tap homebrew/cask-versions
+brew search dash
+brew cask install dash4
+
+# 锁住对应版本（近期内都不打算更新，把 dash 钉在当前版本，防止下一次 brew upgrate 导致悲剧发生 - pin 只支持brew，不支持 brew cask QAQ）
+brew pin dash4
+
+# 查看被钉住的软件
+brew list --pinned
+```
+
+### 【删】除软件
+```bash
+# 卸载
+brew uninstall xxx / brew cask uninstall xxx
+
+# 清理旧版本的包缓存时，清除安装包
+brew cleanup
+```
+
+### 【改】升级软件
+```bash
+# 升级所有软件
+brew update # 更新 brew
+brew upgrade <package_name> # 更新用brew安装的软件
+```
 # 二. Git 环境
 Mac 有内嵌的 Git，但是在更新时不方便，所以需要用 homebrew 安装并更新 git
 
