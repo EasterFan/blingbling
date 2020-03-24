@@ -45,5 +45,5 @@ var gitalk = new Gitalk({
 网易云音乐外链获取方法：  
 ```bash
 # 通过分享音乐获得音乐 ID， 替换后到浏览器直接下载（虽然普通音质~）
-http://music.163.com/song/media/outer/url?id=29850681.mp3
+http://music.163.com/song/media/outer/url?id=5307982.mp3
 ```
