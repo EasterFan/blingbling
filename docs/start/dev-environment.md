@@ -514,7 +514,7 @@ markdown 增强预览：markdown-preview-enhanced
 
 其中 customUrl: https://raw.githubusercontent.com/用户名/仓库名/master
 
-## 4. 设置定时任务
+## 4. 设置定时任务 - 定时同步到 github
 > launchctl是一个统一的服务管理框架，可以启动、停止和管理守护进程、应用程序、进程和脚本等。
 launchctl是通过配置文件来指定执行周期和任务的。
 
@@ -609,6 +609,23 @@ plist 文件存放路径为/Library/LaunchAgents或/Library/LaunchDaemons，前�
 # 结束任务
  launchctl stop  com.easter.bookgo.plist
 ```
+
+## 5. 设置定时任务 - 开机自启
+设置开启一直启动，可以直接在 localhost 打开，速度快  
+```bash
+# 编写 shell 脚本 - shell 脚本放在坚果云同步盘里
+touch custom-start.sh
+
+#!/bin/bash
+cd /Users/easter/Workspace/blingbling/docs && npm run start
+
+# 可执行权限
+chmod +x custom-start.sh
+```
+最后打开 `system performerence -> users && group -> 登陆项`，选中 shell 脚本即可。  
+
+![](https://raw.githubusercontent.com/easterfan/picgo/master/blingbling/2020/20200326113615.png)
+
 # 七. 清理环境
 
 

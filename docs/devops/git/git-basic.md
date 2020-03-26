@@ -46,6 +46,7 @@
 - [Git 小工具](#git-小工具)
   - [git-it](#git-it)
   - [try git](#try-git)
+- [参考](#参考)
 <!-- TOC END -->
 
 # 了解 Git
@@ -506,3 +507,6 @@ git ci -m "rename file-origin to file-renamed"
 在cmd中进入此文件夹，运行`git-it verify`,pass即通关
 
 ## [try git](https://try.github.io/levels/1/challenges/1)
+
+# 参考
+- https://juejin.im/post/5e79ea975188255e277a3892#heading-54
