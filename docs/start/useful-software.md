@@ -21,6 +21,10 @@ brew cask install google-chrome shiftit iterm2 snipaste intellij-idea vlc sogoui
 
 
 brew install autojump jenv
+
+# 可能只用一次的
+brew cask install geekbench
+
 ```
 在 `系统偏好设置 -> 用户 -> 登陆项` 设置软件开机自启
 
