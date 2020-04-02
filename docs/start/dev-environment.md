@@ -4,6 +4,10 @@
 - [一. 系统优化](#一-系统优化)
   - [基本设置](#基本设置)
   - [优化 Homebrew](#优化-homebrew)
+    - [【查】看软件](#查看软件)
+    - [【增】homebrew 安装旧版软件](#增homebrew-安装旧版软件)
+    - [【删】除软件](#删除软件)
+    - [【改】升级软件](#改升级软件)
 - [二. Git 环境](#二-git-环境)
   - [安装 Git 并升级至最新版](#安装-git-并升级至最新版)
   - [SSH密钥配置](#ssh密钥配置)
@@ -31,11 +35,14 @@
   - [3. Github + Picgo 搭建个人图床](#3-github--picgo-搭建个人图床)
     - [配置 github](#配置-github)
     - [配置 PicGo](#配置-picgo)
-  - [4. 设置定时任务](#4-设置定时任务)
+  - [4. 设置定时任务 - 定时同步到 github](#4-设置定时任务---定时同步到-github)
     - [在项目目录新建脚本`bookgo.sh`](#在项目目录新建脚本bookgosh)
     - [新建 plist 定时任务](#新建-plist-定时任务)
     - [加载命令](#加载命令)
-- [七. 清理环境](#七-清理环境)
+  - [5. 设置定时任务 - 开机自启](#5-设置定时任务---开机自启)
+- [七. celibre 图书环境](#七-celibre-图书环境)
+  - [配置邮箱](#配置邮箱)
+  - [常用插件](#常用插件-1)
 - [快捷键管理](#快捷键管理)
   - [Mac 自带快捷键](#mac-自带快捷键)
   - [idea 快捷键](#idea-快捷键)
@@ -626,7 +633,24 @@ chmod +x custom-start.sh
 
 ![](https://raw.githubusercontent.com/easterfan/picgo/master/blingbling/2020/20200326113615.png)
 
-# 七. 清理环境
+# 七. celibre 图书环境
+
+## 配置邮箱
+`command + ,` 先进入邮件配置页面
+![](https://raw.githubusercontent.com/easterfan/picgo/master/blingbling/2020/20200401201930.png)
+
+配置邮箱将本地图书推送到 kindle ：  
+（不要用 163 邮箱，发送邮件会被当做垃圾邮件拒收~）  
+
+![](https://raw.githubusercontent.com/easterfan/picgo/master/blingbling/2020/20200401201332.png)  
+
+kindle 相关问题都可以在 [书伴](https://bookfere.com/) 找到
+
+另外，在发送 pdf 文件时，如果我们将发送邮件的主题改为“convert”，就可以获得已经自动重排的的Kindle阅读格式的 pdf 文件了！
+
+## 常用插件
+dedrm 备用；  
+https://www.epubor.com/free-kindle-drm-removal-calibre-plugin.html
 
 
 # 快捷键管理

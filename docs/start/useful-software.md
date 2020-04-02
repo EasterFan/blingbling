@@ -9,7 +9,9 @@
 - 掘金
 - evernote 剪藏
 - Octotree - github 目录浏览神器
+- bookmarks clean up - 很实用的书签清理工具
 
+![](https://raw.githubusercontent.com/easterfan/picgo/master/blingbling/2020/20200402073701.png)
 
 ## 快速安装所有软件
 ```bash
