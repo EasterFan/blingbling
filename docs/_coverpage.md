@@ -5,4 +5,6 @@
 > Study hard ! Play Hard !
 
 [Bling!](https://easterfan.github.io/blingbling/#/)
-[开始阅读](README.md)
+[关于我]()
+[Kindle](https://easterfan.github.io/kindleNotes/)
+[Hire Me!](README.md)
