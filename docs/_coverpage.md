@@ -1,10 +1,10 @@
-<div align="center"><img width="100px" src="http://dunwu.test.upcdn.net/images/others/zp.png"/></div>
+<div align="center"><img width="100px" src="https://s1.ax1x.com/2020/04/03/GUmJwn.png"/></div>
 
 # BlingBling!!
 
 > Study hard ! Play Hard !
 
-[Bling!](https://easterfan.github.io/blingbling/#/)
-[关于我]()
 [Kindle](https://easterfan.github.io/kindleNotes/)
-[Hire Me!](README.md)
+[关于我]()
+[开始](README.md)
+[Hire Me!](https://easterfan.github.io/resume/)
