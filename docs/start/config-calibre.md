@@ -20,7 +20,7 @@
 ### 将电子书放入对应的目录
 选中要移动的书，`编辑该书的元数据—>自定义元数据`
 
-
+![](https://raw.githubusercontent.com/easterfan/picgo/master/blingbling/2020/20200405110356.png)
 
 
 ## 其他技巧
