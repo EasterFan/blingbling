@@ -509,7 +509,9 @@ markdown 增强预览：markdown-preview-enhanced
 自动生成 toc ：markdown-toc-auto - by t9md
 ### 常用快捷键
 
-## 3. Github + Picgo 搭建个人图床
+## 3. Github + Picgo + jsdelivr 搭建个人图床
+
+> 如果图片一致上传失败，注意检查仓库中是否有同名图片文件，重名会导致上传失败（而且不报具体错~~）！
 
 ### 配置 github
 - 新建一个**公共仓库**
@@ -518,9 +520,14 @@ markdown 增强预览：markdown-preview-enhanced
 ### 配置 PicGo
 **github-plus** 是一个可以代替 picgo 原生 github 图床的插件，可以快捷的上传图片到图床，最强大的是同步远程图床，实现在本地删除图片，远程也同步删除的功能。  
 
-![](https://raw.githubusercontent.com/easterfan/picgo/master/blingbling/2020/20200322092438.png)  
+![](https://cdn.jsdelivr.net/gh/easterfan/picgo/blingbling/2020/20200417133549.png)
 
-其中 customUrl: https://raw.githubusercontent.com/用户名/仓库名/master
+其中 customUrl，原来的设置为: https://raw.githubusercontent.com/用户名/仓库名/master  
+
+使用 jsdelivr 进行 CDN 加速，加快下载速度，customUrl：https://cdn.jsdelivr.net/gh/用户名/仓库名/
+
+设置代理，加快上传速度  
+![](https://raw.githubusercontent.com/easterfan/picgo/master/blingbling/2020/20200417132121.png)
 
 ## 4. 设置定时任务 - 定时同步到 github
 > launchctl是一个统一的服务管理框架，可以启动、停止和管理守护进程、应用程序、进程和脚本等。
