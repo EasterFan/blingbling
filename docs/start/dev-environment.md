@@ -43,6 +43,7 @@
 - [七. celibre 图书环境](#七-celibre-图书环境)
   - [配置邮箱](#配置邮箱)
   - [常用插件](#常用插件-1)
+- [Docker 和常用镜像](#docker-和常用镜像)
 - [快捷键管理](#快捷键管理)
   - [Mac 自带快捷键](#mac-自带快捷键)
   - [idea 快捷键](#idea-快捷键)
@@ -652,7 +653,11 @@ kindle 相关问题都可以在 [书伴](https://bookfere.com/) 找到
 dedrm 备用；  
 https://www.epubor.com/free-kindle-drm-removal-calibre-plugin.html
 
-
+# Docker 和常用镜像
+```bash
+brew cask install docker
+docker pull mysql:5.7
+```
 # 快捷键管理
 ## Mac 自带快捷键
 
@@ -665,7 +670,7 @@ https://www.epubor.com/free-kindle-drm-removal-calibre-plugin.html
 ## atom 快捷键
 
 ## 附件1：.bash_profile
-2020.03.12 backup:  
+2020.03.12 backup:   
 ```
 # publish book automate -- by easter
 alias bookgo="git add . && git commit -m 'Auot-update' && git pull --rebase && git push origin master && npm run docs && gh-pages -d website/build/blingbling"
