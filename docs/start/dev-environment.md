@@ -641,24 +641,6 @@ chmod +x custom-start.sh
 
 ![](https://raw.githubusercontent.com/easterfan/picgo/master/blingbling/2020/20200326113615.png)
 
-# 七. celibre 图书环境
-
-## 配置邮箱
-`command + ,` 先进入邮件配置页面
-![](https://raw.githubusercontent.com/easterfan/picgo/master/blingbling/2020/20200401201930.png)
-
-配置邮箱将本地图书推送到 kindle ：  
-（不要用 163 邮箱，发送邮件会被当做垃圾邮件拒收~）  
-
-![](https://raw.githubusercontent.com/easterfan/picgo/master/blingbling/2020/20200401201332.png)  
-
-kindle 相关问题都可以在 [书伴](https://bookfere.com/) 找到
-
-另外，在发送 pdf 文件时，如果我们将发送邮件的主题改为“convert”，就可以获得已经自动重排的的Kindle阅读格式的 pdf 文件了！
-
-## 常用插件
-dedrm 备用；  
-https://www.epubor.com/free-kindle-drm-removal-calibre-plugin.html
 
 # Docker 和常用镜像
 ```bash

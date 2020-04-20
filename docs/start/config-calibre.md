@@ -5,6 +5,21 @@
 
 ## 安装配置
 
+
+### 配置邮箱：一键通过邮箱推送到 kindle
+
+`command + ,` 先进入邮件配置页面
+![](https://raw.githubusercontent.com/easterfan/picgo/master/blingbling/2020/20200401201930.png)
+
+配置邮箱将本地图书推送到 kindle ：  
+（不要用 163 邮箱，发送邮件会被当做垃圾邮件拒收~）  
+
+![](https://raw.githubusercontent.com/easterfan/picgo/master/blingbling/2020/20200401201332.png)  
+
+kindle 相关问题都可以在 [书伴](https://bookfere.com/) 找到
+
+另外，在发送 pdf 文件时，如果我们将发送邮件的主题改为“convert”，就可以获得已经自动重排的的Kindle阅读格式的 pdf 文件了！
+
 ## 目录管理
 电子书分类极其费心费力，尤其添加一本书后，又想要重新提调整整个目录，
 
@@ -23,11 +38,10 @@
 ![](https://raw.githubusercontent.com/easterfan/picgo/master/blingbling/2020/20200405110356.png)
 
 
-## 其他技巧
-### 目录筛选功能
+## calibre 通过 WiFi 传书给 kindle
+先在 calibre 中开启共享，然后在 kindle 网页浏览器中通过 IP + 端口访问：`192.168.0.100:8080`
+![](https://cdn.jsdelivr.net/gh/easterfan/picgo/blingbling/2020/20200419144111.png)
 
-### 局域网直接下载
-
-### 一键推送到 kindle
-
-###
+## 常用插件
+dedrm 备用；  
+https://www.epubor.com/free-kindle-drm-removal-calibre-plugin.html
