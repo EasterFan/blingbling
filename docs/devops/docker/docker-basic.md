@@ -292,6 +292,9 @@ vagrant destroy
 # 进入系统镜像
 vagrant ssh
 ```
+
+测试 git reset
+
 # 参考 && 学习资源
 
 - 社区  
