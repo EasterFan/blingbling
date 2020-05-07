@@ -288,6 +288,9 @@ vagrant halt
 vagrant status
 # 销毁虚拟机
 vagrant destroy
+
+# 进入系统镜像
+vagrant ssh
 ```
 # 参考 && 学习资源
 
