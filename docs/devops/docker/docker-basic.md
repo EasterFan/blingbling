@@ -14,6 +14,7 @@
   - [一个简单的 hello-world 跑全程](#一个简单的-hello-world-跑全程)
   - [一个简单的 nginx 跑全程](#一个简单的-nginx-跑全程)
   - [制作自己的 javaWeb 镜像   - jpress](#制作自己的-javaweb-镜像-----jpress)
+- [三. 容器编排](#三-容器编排)
 - [参考 && 学习资源](#参考--学习资源)
 <!-- TOC END -->
 
@@ -106,8 +107,6 @@ linux是多用户协作，有时候你什么都没做，应用就挂了，原因
 而docker做的是，在创建的时候就限定了该用户的内存磁盘空间，超过了就把你杀掉，不会影响其他人  
 **docker的隔离性解决了多用户操作产生的干扰**  
 
-
-
 - 双11来了，服务器快架不住了！  
 对于电商服务器，每到节日的业务量是平时的几十倍，运维总在节日前扩展机器，节日后节点下线，这给运维带来极大的工作量  
 docker要做的是，下载，安装，无需配置环境，整个过程大大节省了时间。  
@@ -115,7 +114,14 @@ docker要做的是，下载，安装，无需配置环境，整个过程大大�
 
 综上，docker于我们的意义在于：  
 
-**快速的持续集成，服务的弹性伸缩，部署简单，解放了运维。最重要的是，它为企业节省了机器资源**
+**快速的持续集成，服务的弹性伸缩，部署简单，解放了运维。最重要的是，它为企业节省了机器资源**  
+
+在 docker 出现之前，需要运维逐台服务器部署（装环境、更新 war 包等），缺点是:
+- 部署非常慢，效率低
+- 服务器资源浪费（一个服务器只装有一个环境和相应 war 包）
+- 难于迁移和扩展
+- 可能对服务器硬件产生依赖
+
 
 # 二. docker 使用
 
@@ -257,6 +263,32 @@ MAINTAINER fdf fan.easter@gmail.com
 COPY jpress-web-newest.war /usr/local/tomcat/webapps
 ```
 
+# 三. 容器编排
+对容器的创建、调度、管理、运维进行管理的工具。比如一个系统中有成百上千个容器，就需要容器编排工具对容器进行统一管理，常用的容器编排工具：docker swarm 和 k8s。
+
+安装 vagrant 环境 ：
+```bash
+brew cask install virtualbox
+brew cask install vagrant
+```
+
+vagrant 常用命令：
+```bash
+# 初始化虚拟机 - https://vagrantcloud.com
+vagrant init centos/7
+# 启动环境
+vagrant up
+# 挂起虚拟机
+vagrant suspend
+#恢复被挂起的虚拟机
+vagrant resume
+# 关机
+vagrant halt
+# 获取虚拟机状态
+vagrant status
+# 销毁虚拟机
+vagrant destroy
+```
 # 参考 && 学习资源
 
 - 社区  
@@ -268,3 +300,5 @@ COPY jpress-web-newest.war /usr/local/tomcat/webapps
 - 牛博  
 [螃蟹的个人博客](http://www.pangxie.space/)   
 [有视频的博客阿，很吊](https://blog.lab99.org/)
+
+- https://princeli.com/mac-os%E7%B3%BB%E7%BB%9F%E4%B8%8Bvagrant%E7%9A%84%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/
