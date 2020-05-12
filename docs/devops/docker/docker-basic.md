@@ -174,6 +174,15 @@ docker version
 10. 关闭容器   docker stop 容器id
 ```
 
+
+```
+docker image prune
+docker container prune
+docker system prune
+
+docker logs [containerID]
+```
+
 在使用nginx的时候，有一个问题我们不得不考虑一下，即**docker的网络**  
 我们考虑docker网络，是因为我们想在本机浏览器中访问docker的80端口  
 
@@ -278,6 +287,10 @@ vagrant 常用命令：
 vagrant init centos/7
 # 启动环境
 vagrant up
+
+# 进入系统镜像
+vagrant ssh
+
 # 挂起虚拟机
 vagrant suspend
 #恢复被挂起的虚拟机
@@ -289,11 +302,16 @@ vagrant status
 # 销毁虚拟机
 vagrant destroy
 
-# 进入系统镜像
-vagrant ssh
 ```
 
-测试 git reset
+docker 清理空间：
+```bash
+# 查看 docker 占用空间
+docker system df
+
+# 清理空间
+docker system prune -a --volumes
+```
 
 # 参考 && 学习资源
 
