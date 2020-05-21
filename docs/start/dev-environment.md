@@ -27,12 +27,15 @@
     - [隐藏用户名和主机名](#隐藏用户名和主机名)
     - [iterm2 快速显示](#iterm2-快速显示)
   - [iterm 快捷键](#iterm-快捷键)
+  - [iterm 保存 ssh 连接](#iterm-保存-ssh-连接)
+    - [1. 生成云服务器私钥后](#1-生成云服务器私钥后)
+    - [2. 配置 iterm](#2-配置-iterm)
 - [六. gitbook 环境](#六-gitbook-环境)
   - [1. gitbook 版 + docsify 版](#1-gitbook-版--docsify-版)
   - [2. atom 环境](#2-atom-环境)
     - [常用插件](#常用插件)
     - [常用快捷键](#常用快捷键)
-  - [3. Github + Picgo 搭建个人图床](#3-github--picgo-搭建个人图床)
+  - [3. Github + Picgo + jsdelivr 搭建个人图床](#3-github--picgo--jsdelivr-搭建个人图床)
     - [配置 github](#配置-github)
     - [配置 PicGo](#配置-picgo)
   - [4. 设置定时任务 - 定时同步到 github](#4-设置定时任务---定时同步到-github)
@@ -40,9 +43,6 @@
     - [新建 plist 定时任务](#新建-plist-定时任务)
     - [加载命令](#加载命令)
   - [5. 设置定时任务 - 开机自启](#5-设置定时任务---开机自启)
-- [七. celibre 图书环境](#七-celibre-图书环境)
-  - [配置邮箱](#配置邮箱)
-  - [常用插件](#常用插件-1)
 - [Docker 和常用镜像](#docker-和常用镜像)
 - [快捷键管理](#快捷键管理)
   - [Mac 自带快捷键](#mac-自带快捷键)
@@ -467,6 +467,32 @@ ctrl + f/b	前进后退
 ctrl + p	上一条命令
 ctrl + r	搜索命令历史
 
+## iterm 保存 ssh 连接
+
+以腾讯云为例：
+
+### 1. 生成云服务器私钥后
+![](https://cdn.jsdelivr.net/gh/easterfan/picgo/blingbling/2020/20200521152237.png)
+
+```bash
+# 更改权限
+mv private-key ~/.ssh
+chmod 400 private-key
+
+# 登陆
+ssh -i ~/.ssh/private-key root@123.456.2.0
+```
+
+### 2. 配置 iterm
+
+打开配置：`iterm2/ profiles/open profile/edit profile`
+
+Command: `ssh -i ~/.ssh/whiteline_my_mac root@123.456.100.30`
+
+![](https://cdn.jsdelivr.net/gh/easterfan/picgo/blingbling/2020/20200521152941.png)
+
+快速连接：
+![](https://cdn.jsdelivr.net/gh/easterfan/picgo/blingbling/2020/20200521153448.png)
 
 # 六. gitbook 环境
 
