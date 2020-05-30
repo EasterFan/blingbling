@@ -150,8 +150,8 @@ brew cleanup
 
 ### 【改】升级软件
 ```bash
-# 升级所有软件
 brew update # 更新 brew
+# 升级所有软件
 brew upgrade <package_name> # 更新用brew安装的软件
 ```
 # 二. Git 环境

@@ -49,6 +49,47 @@ docker：docker提供了一系列REST API接口，包含对容器（即应用）
 虚拟机创建隔离环境几分钟，docker秒级创建  
 隔离环境可被快速创建和销毁
 
+## docker 环境 - vagrant && virtualbox
+项目生产环境都是在 linux 中安装 docker，但是我们常用的系统是 mac 和 windows，vagrant 做的事情就是在 mac 上安装 centos，ubuntu 等虚拟环境，然后在虚拟环境中安装 docker。  
+
+通常我们在 mac 上安装虚拟机通常是先在电脑上安装 vmware 或 virtualbox，然后去找对应的 centos 的 ISO 镜像安装成虚拟机，整个过程比较繁琐，在虚拟机的安装和删除上，vagrant 一行命令就可以完成。
+
+在 mac 上安装 vagrant：  
+```bash
+
+
+```
+
+使用 vagrant 创建 centos7 全过程(需要新建一个目录，所有 vagrant 命令都是在这个有 vagrantFile 文件的目录下执行的)：  
+```bash
+# 新建一个文件夹 - vagrant 命令是在 init 后的 文件夹下进行的，类似 git
+mkdir ubuntu && cd ubuntu
+
+# 新建一个 vagrant 项目 - 通过 vagrantcloud 网站找名字
+vagrant init ubuntu
+
+# 查看 vagrant 状态
+vagrant status
+
+# 启动 ubuntu
+vagrant up
+
+# 进入到 Ubuntu 虚拟机中
+vagrant ssh
+
+# 强制停止虚拟机
+vagrant halt
+
+# 挂起虚拟机
+vagrant suspend
+
+# 完全删除虚拟机
+vagrant destory
+```
+
+修改 vagrantfile，使虚拟机创建成功后，就自动安装 docker
+
+
 ## docker 三大核心概念
 ![](https://raw.githubusercontent.com/easterfan/picgo/master/blingbling/2020/docker-relationship.png)
 
@@ -71,6 +112,9 @@ docker：docker提供了一系列REST API接口，包含对容器（即应用）
 5. 构建镜像的目的  
 构建镜像的目的，把我的代码完整的迁移到其他的机器或环境，使我的代码在其他机器上运行
 
+6. 镜像的获取
+- 通过 dockerfile 获取
+- 通过 docker pull 获取
 
 ### 容器
 1. 什么是容器
@@ -264,7 +308,7 @@ localhost要写本机ip--因为jpress运行在容器中，你填localhost它会�
 
 
 【Dockerfile源文件】  
-```angular2html
+```
 from tomcat
 
 MAINTAINER fdf fan.easter@gmail.com
@@ -295,13 +339,12 @@ vagrant ssh
 vagrant suspend
 #恢复被挂起的虚拟机
 vagrant resume
-# 关机
+# 强制关机
 vagrant halt
 # 获取虚拟机状态
 vagrant status
 # 销毁虚拟机
 vagrant destroy
-
 ```
 
 docker 清理空间：
