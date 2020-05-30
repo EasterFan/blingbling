@@ -1,8 +1,8 @@
-
 <!-- TOC START min:1 max:3 link:true asterisk:false update:true -->
 - [一. docker 介绍](#一-docker-介绍)
   - [docker 是什么](#docker-是什么)
   - [docker 三大核心思想](#docker-三大核心思想)
+  - [docker 环境 - vagrant && virtualbox](#docker-环境---vagrant--virtualbox)
   - [docker 三大核心概念](#docker-三大核心概念)
     - [镜像](#镜像)
     - [容器](#容器)
@@ -17,6 +17,8 @@
 - [三. 容器编排](#三-容器编排)
 - [参考 && 学习资源](#参考--学习资源)
 <!-- TOC END -->
+
+
 
 
 # 一. docker 介绍
@@ -54,37 +56,46 @@ docker：docker提供了一系列REST API接口，包含对容器（即应用）
 
 通常我们在 mac 上安装虚拟机通常是先在电脑上安装 vmware 或 virtualbox，然后去找对应的 centos 的 ISO 镜像安装成虚拟机，整个过程比较繁琐，在虚拟机的安装和删除上，vagrant 一行命令就可以完成。
 
-在 mac 上安装 vagrant：  
+安装 vagrant 环境 ：
 ```bash
-
-
+brew cask install virtualbox
+brew cask install vagrant
 ```
 
-使用 vagrant 创建 centos7 全过程(需要新建一个目录，所有 vagrant 命令都是在这个有 vagrantFile 文件的目录下执行的)：  
+vagrant 常用命令：
 ```bash
-# 新建一个文件夹 - vagrant 命令是在 init 后的 文件夹下进行的，类似 git
-mkdir ubuntu && cd ubuntu
+# 初始化虚拟机 - https://vagrantcloud.com
+vagrant init centos/7
 
-# 新建一个 vagrant 项目 - 通过 vagrantcloud 网站找名字
-vagrant init ubuntu
-
-# 查看 vagrant 状态
-vagrant status
-
-# 启动 ubuntu
+# 启动环境
 vagrant up
 
-# 进入到 Ubuntu 虚拟机中
+# 进入系统镜像
 vagrant ssh
-
-# 强制停止虚拟机
-vagrant halt
 
 # 挂起虚拟机
 vagrant suspend
 
-# 完全删除虚拟机
-vagrant destory
+#恢复被挂起的虚拟机
+vagrant resume
+
+# 强制关机
+vagrant halt
+
+# 获取虚拟机状态
+vagrant status
+
+# 销毁虚拟机
+vagrant destroy
+```
+
+docker 清理空间：
+```bash
+# 查看 docker 占用空间
+docker system df
+
+# 清理空间
+docker system prune -a --volumes
 ```
 
 修改 vagrantfile，使虚拟机创建成功后，就自动安装 docker
@@ -318,43 +329,6 @@ COPY jpress-web-newest.war /usr/local/tomcat/webapps
 
 # 三. 容器编排
 对容器的创建、调度、管理、运维进行管理的工具。比如一个系统中有成百上千个容器，就需要容器编排工具对容器进行统一管理，常用的容器编排工具：docker swarm 和 k8s。
-
-安装 vagrant 环境 ：
-```bash
-brew cask install virtualbox
-brew cask install vagrant
-```
-
-vagrant 常用命令：
-```bash
-# 初始化虚拟机 - https://vagrantcloud.com
-vagrant init centos/7
-# 启动环境
-vagrant up
-
-# 进入系统镜像
-vagrant ssh
-
-# 挂起虚拟机
-vagrant suspend
-#恢复被挂起的虚拟机
-vagrant resume
-# 强制关机
-vagrant halt
-# 获取虚拟机状态
-vagrant status
-# 销毁虚拟机
-vagrant destroy
-```
-
-docker 清理空间：
-```bash
-# 查看 docker 占用空间
-docker system df
-
-# 清理空间
-docker system prune -a --volumes
-```
 
 # 参考 && 学习资源
 
