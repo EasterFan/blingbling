@@ -90,6 +90,15 @@ RUN apt-get install -y mysql-server= "${MYSQL_VERSION}" \
 
 
 ## CMD && ENTRYPOINT
+- CMD ：容器启动（docker run）以后，默认执行的命令，CMD 被覆盖的原因是：CMD 是默认执行的命令，优先级比较低，如果命令行中带参数，参数会自动覆盖CMD
+- ENTRYPOINT：容器（docker run）的启动后执行的命令
+- 在写Dockerfile时, ENTRYPOINT或者CMD命令会自动覆盖之前的ENTRYPOINT或者CMD命令.
+
+### CMD 的三种形式
+
+
+### ENTRYPOINT 的三种形式
+
 
 # 把静态网页装进 docker
 
