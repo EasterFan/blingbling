@@ -83,7 +83,7 @@ vagrant resume
 vagrant halt
 
 # 获取虚拟机状态
-vagrant status
+vagrant global-status
 
 # 销毁虚拟机
 vagrant destroy
@@ -94,12 +94,46 @@ docker 清理空间：
 # 查看 docker 占用空间
 docker system df
 
-# 清理空间
+# 清理空间 - 方便彻底但危险，需要确认一下
 docker system prune -a --volumes
 ```
 
-修改 vagrantfile，使虚拟机创建成功后，就自动安装 docker
+## Vagrantfile 需要修改的部分
+1. 修改 vagrantfile，使虚拟机创建成功后，就自动安装 docker，各个系统安装命令见 docker 文档（注意 -y 静默安装，否则会安装失败）
 
+```
+config.vm.provision "shell", inline: <<-SHELL
+  sudo yum install -y yum-utils
+  sudo yum-config-manager \
+    --add-repo \
+    https://download.docker.com/linux/centos/docker-ce.repo
+  sudo yum install -y docker-ce docker-ce-cli containerd.io
+  sudo systemctl start docker
+  sudo docker run hello-world
+ SHELL
+end
+```
+
+2. 修改默认的虚拟机的名字：
+
+```bash
+config.vm.provider "virtualbox" do |v|
+    v.name = "test_environment"
+end
+```
+
+3. 设置共享文件夹
+```
+config.vm.synced_folder   
+   "your_folder"(必须)   //物理机目录，可以是绝对地址或相对地址，相对地址是指相对与vagrant配置文件所在目录
+  ,"vm_folder(必须)"    // 挂载到虚拟机上的目录地址
+  ,create(boolean)--可选     //默认为false，若配置为true，挂载到虚拟机上的目录若不存在则自动创建
+  ,disabled(boolean):--可选   //默认为false，若为true,则禁用该项挂载
+  ,owner(string):'www'--可选   //虚拟机系统下文件所有者(确保系统下有该用户，否则会报错)，默认为vagrant
+  ,group(string):'www'--可选   //虚拟机系统下文件所有组( (确保系统下有该用户组，否则会报错)，默认为vagrant
+  ,mount_options(array):["dmode=775","fmode=664"]--可选  dmode配置目录权限，fmode配置文件权限  //默认权限777
+  ,type(string):--可选     //指定文件共享方式，例如：'nfs'，vagrant默认根据系统环境选择最佳的文件共享方式
+```
 
 ## docker 三大核心概念
 ![](https://raw.githubusercontent.com/easterfan/picgo/master/blingbling/2020/docker-relationship.png)
