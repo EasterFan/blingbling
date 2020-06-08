@@ -135,6 +135,29 @@ config.vm.synced_folder
   ,type(string):--可选     //指定文件共享方式，例如：'nfs'，vagrant默认根据系统环境选择最佳的文件共享方式
 ```
 
+4. 在虚拟机中使用代理
+> 比如在 centos 虚拟机中下载 docker-compose 安装脚本特别慢，使用 vagrant-proxyconf 帮助虚拟机爬墙。
+
+安装 vagrant-proxyconf：
+`vagrant plugin install vagrant-proxyconf`  
+
+通过配置 Vagrantfile 文件设置代理
+
+```
+Vagrant.configure("2") do |config|
+  if Vagrant.has_plugin?("vagrant-proxyconf")
+    config.proxy.http     = "http://192.168.0.2:7890/"
+    config.proxy.https    = "http://192.168.0.2:7890/"
+    config.proxy.no_proxy = "localhost,127.0.0.1,.example.com"
+  end
+  # ... other stuff
+end
+```
+- IP 地址是**物理机**的地址
+- vagrant-proxyconf 是安装在对应虚拟机里面的，如果 `vagrant destroy` 销毁虚拟机后，需要重新安装 vagrant-proxyconf
+- 安装后 `vagrant up` 如果一直拒绝连接到物理机，检查代理的 **允许局域网连接** 设置是否开启
+![](https://cdn.jsdelivr.net/gh/easterfan/picgo/blingbling/2020/20200607213744.png)
+
 ## docker 三大核心概念
 ![](https://raw.githubusercontent.com/easterfan/picgo/master/blingbling/2020/docker-relationship.png)
 
