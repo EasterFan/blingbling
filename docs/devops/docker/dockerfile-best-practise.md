@@ -17,7 +17,7 @@
 # dockerfile 语法和最佳实践
 ```bash
 #第一行必须指令基于的基础镜像 -
-FROM ubutu
+FROM ubuntu
 
 #维护者信息
 MAINTAINER docker_user  docker_user@mail.com
