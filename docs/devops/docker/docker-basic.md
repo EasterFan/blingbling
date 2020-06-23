@@ -51,7 +51,9 @@ docker：docker提供了一系列REST API接口，包含对容器（即应用）
 虚拟机创建隔离环境几分钟，docker秒级创建  
 隔离环境可被快速创建和销毁
 
-## docker 环境 - vagrant && virtualbox
+## docker 环境
+
+### vagrant && virtualbox
 项目生产环境都是在 linux 中安装 docker，但是我们常用的系统是 mac 和 windows，vagrant 做的事情就是在 mac 上安装 centos，ubuntu 等虚拟环境，然后在虚拟环境中安装 docker。  
 
 通常我们在 mac 上安装虚拟机通常是先在电脑上安装 vmware 或 virtualbox，然后去找对应的 centos 的 ISO 镜像安装成虚拟机，整个过程比较繁琐，在虚拟机的安装和删除上，vagrant 一行命令就可以完成。
@@ -98,7 +100,7 @@ docker system df
 docker system prune -a --volumes
 ```
 
-## Vagrantfile 需要修改的部分
+### Vagrantfile 需要修改的部分
 1. 修改 vagrantfile，使虚拟机创建成功后，就自动安装 docker，各个系统安装命令见 docker 文档（注意 -y 静默安装，否则会安装失败）
 
 ```
@@ -157,6 +159,27 @@ end
 - vagrant-proxyconf 是安装在对应虚拟机里面的，如果 `vagrant destroy` 销毁虚拟机后，需要重新安装 vagrant-proxyconf
 - 安装后 `vagrant up` 如果一直拒绝连接到物理机，检查代理的 **允许局域网连接** 设置是否开启
 ![](https://cdn.jsdelivr.net/gh/easterfan/picgo/blingbling/2020/20200607213744.png)
+
+### daocloud 国内公有镜像加速
+因为网络问题国内镜像下载速度非常慢（自己电脑还好，服务器贼慢），于是选择国内镜像站，daocloud 和 阿里云镜像都还可以。  
+
+```bash
+# 1. 运行命令 - mac 和 windows 见 https://www.daocloud.io/mirror
+curl -sSL https://get.daocloud.io/daotools/set_mirror.sh | sh -s http://f1361db2.m.daocloud.io
+
+# 2.验证
+docker info
+
+Insecure Registries:
+ 127.0.0.0/8
+Registry Mirrors:
+ http://f1361db2.m.daocloud.io/
+Live Restore Enabled: false
+Product License: Community Engine
+```  
+
+
+
 
 ## docker 三大核心概念
 ![](https://raw.githubusercontent.com/easterfan/picgo/master/blingbling/2020/docker-relationship.png)
