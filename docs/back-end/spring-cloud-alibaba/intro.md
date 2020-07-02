@@ -6,8 +6,10 @@
 
 
 # Spring cloud 和 Spring Cloud alibaba 区别
-Spring Cloud Alibaba 是 Spring Cloud 的子集，缺点是 Spring Cloud 很多组件已经停止维护，Spring Cloud Alibaba 正在强劲开发中。
+Spring Cloud Alibaba 是 Spring Cloud 的子集，spring cloud alibaba 符合，缺点是 Spring Cloud 很多组件已经停止维护，Spring Cloud Alibaba 正在强劲开发中。
 
+![](https://cdn.jsdelivr.net/gh/easterfan/picgo/blingbling/2020/20200701153645.png)
+![](https://cdn.jsdelivr.net/gh/easterfan/picgo/blingbling/2020/20200701153528.png)
 
 
 # Spring cloud Alibaba 应用场景
