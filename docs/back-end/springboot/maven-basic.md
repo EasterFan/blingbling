@@ -4,7 +4,7 @@
 <!-- TOC START min:1 max:3 link:true asterisk:false update:true -->
 - [一. maven 介绍](#一-maven-介绍)
   - [1. 目录介绍](#1-目录介绍)
-  - [2. maven 环境(ubuntu 16.04 + idea)](#2-maven-环境ubuntu-1604--idea)
+  - [2. maven 环境(Mac + idea)](#2-maven-环境mac--idea)
   - [3. 跑 hello world](#3-跑-hello-world)
     - [1. hello 项目目录](#1-hello-项目目录)
     - [2. 运行三个命令](#2-运行三个命令)
@@ -39,26 +39,16 @@
 - lib (maven 执行时所用到的类库 -- 自身的和第三方的)
 ```
 
-## 2. maven 环境(ubuntu 16.04 + idea)
-[http://maven.apache.org/](http://maven.apache.org/)下载, maven 需要JDK环境
+## 2. maven 环境(Mac + idea)
+
 ```bash
-# 解压
-tar zxvf apache-maven-3.3.9-bin.tar.gz
-# 移动
-sudo mv apache-maven-3.3.9/ /opt/apache-maven-3.3.9/
-# 创建链接
-sudo ln -s /opt/apache-maven-3.3.9/ /opt/maven
+# 安装
+brew install maven
 
-# 配置环境变量
-sudo vim ~/.bashrc
-export M2_HOME=/opt/maven
-export M2=$M2_HOME/bin
-export PATH=$M2:$PATH
+# 配置maven 中央仓库
+vim /usr/local/Cellar/maven/3.5.0/libexec/conf/setting.xml
 
-# 刷新生效
-source ~/.bashrc
-# 测试
-mvn -version
+<localRepository>/Users/xxx/maven_repo</localRepository>
 ```
 
 ## 3. 跑 hello world

@@ -12,4 +12,7 @@ SpringBoot 的优点：
 - 和微服务、云计算的天然集成（Spring Boot比较适合微服务部署方式，不再是把一堆应用放到一个Web服务器下，重启Web服务器会影响到其他应用，而是每个应用独立使用一个Web服务器，重启动和更新都很容易。）
 
 缺点：
-入门容易精通难，因为SpringBoot中有大量的自动配置，如果不了解 Spring 底层的 API，就不能对 Springboot 做更深层的定制。
+入门容易精通难，因为 SpringBoot 中有大量的自动配置，如果不了解 Spring 底层的 API，就不能对 Springboot 做更深层的定制。
+
+
+![](https://cdn.jsdelivr.net/gh/easterfan/picgo/blingbling/2020/20200707184129.png)
