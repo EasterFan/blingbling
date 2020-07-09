@@ -12,6 +12,11 @@ http://color-themes.com/ 或者 **material theme ui** 插件(方便！)
 界面设置：File-->Settings-->Build,Execution,Deployment-->Compiler， 勾选 Compiler中`Build project automatically`
 
 
+### idea 设置代理
+> 否则 android sdk 无法下载
+
+![](https://cdn.jsdelivr.net/gh/easterfan/picgo/blingbling/2020/20200708114849.png)
+
 ### 设置 code-style
 添加 google-code-style, [在这里下载 https://github.com/google/styleguide/blob/gh-pages/intellij-java-google-style.xml](https://github.com/google/styleguide/blob/gh-pages/intellij-java-google-style.xml)  
 
