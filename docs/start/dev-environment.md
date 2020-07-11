@@ -494,6 +494,12 @@ Command: `ssh -i ~/.ssh/whiteline_my_mac root@123.456.100.30`
 快速连接：
 ![](https://cdn.jsdelivr.net/gh/easterfan/picgo/blingbling/2020/20200521153448.png)
 
+## navi 命令行提示神器
+忘记 navi 命令行仓库地址时，在 navi 中输入 navi 查询。  
+
+
+
+
 # 六. gitbook 环境
 
 ## 1. gitbook 版 + docsify 版
