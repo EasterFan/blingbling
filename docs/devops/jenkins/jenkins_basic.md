@@ -3,6 +3,11 @@
 
 ## docker 安装 jenkins
 
+### 修改权限
+
+chown user:group file
+
+
 ```bash
 # 安装官方推荐镜像
 docker pull jenkinsci/blueocean
