@@ -114,6 +114,7 @@ Alt + F8 – show evaluate window during debugging.
  - Alibaba Java Coding Guidelines -  Alibaba开发规约，扫描潜在的代码隐患
  - Material Theme UI - 主题包  
  - lombok - 代码简化
+ - GenerateSerialVersionUID
 
 ## 参考
 - [javaZone比较推荐 - https://automationrhapsody.  com/intellij-idea-keyboard-combinations/](https://automationrhapsody.  com/intellij-idea-keyboard-combinations/)
