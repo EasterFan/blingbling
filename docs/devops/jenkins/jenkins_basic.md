@@ -3,25 +3,23 @@
 
 ## docker 安装 jenkins
 
-### 修改权限
-
-chown user:group file
-
-
 ```bash
 # 安装官方推荐镜像
 docker pull jenkinsci/blueocean
 
-docker run -d --name=saimo_jenkins -p 8081:8080 -v /saimo_data/jenkins_home:/var/jenkins_home 60f81923d099
+# 新建 jenkins_home 数据存储路径 - 并设置为 jenkins 可访问
+mkdir -p /my_jenkins/jenkins_home &&  sudo chown -R 1000:1000 /my_jenkins/jenkins_home/
 
-# 启动镜像
+docker run -d --name=saimo_jenkins -p 8081:8080 -p 50001:50000 -v /my_jenkins/jenkins_home:/var/jenkins_home 60f81923d099
+
+# 启动镜像 - 云服务器启动记得打开对应防火墙端口
+
 docker run -d --name saimo_jenkins -p 8081:8080 -p 50001:50000 b2e3a5384a86
-```
 
+# 查看 jenkins 对应的管理员密码 - 可以直接 docker logs 查看
+docker exec -it 6847500d1883 cat /var/jenkins_home/secrets/initialAdminPassword
 ```
-docker exec -it 6847500d1883 bash
-cat /var/jenkins_home/secrets/initialAdminPassword
-```
+过程可能出现“无法连接到 jenkins” 的问题，网络原因，只能多试几次
 ![](https://cdn.jsdelivr.net/gh/easterfan/picgo/blingbling/2020/20200709101951.png)
 
 ![](https://cdn.jsdelivr.net/gh/easterfan/picgo/blingbling/2020/20200709143635.png)
