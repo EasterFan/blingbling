@@ -27,7 +27,12 @@ docker exec -it 6847500d1883 cat /var/jenkins_home/secrets/initialAdminPassword
 ## 安装插件:
 - safe restart
 - rebuilder - 重新构建
+- Maven Integration
 
+
+# 搭建一个 maven 项目
+新建一个 maven 任务 - 如果没有这个选项的话需要安装 Maven Integration 插件。  
+![](https://cdn.jsdelivr.net/gh/easterfan/picgo/blingbling/2020/20200723114456.png)
 
 
 ## 基础配置
