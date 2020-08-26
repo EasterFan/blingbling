@@ -1,5 +1,25 @@
+<!-- TOC START min:1 max:3 link:true asterisk:false update:true -->
+- [搭建 jenkins](#搭建-jenkins)
+- [Master-slave 模式](#master-slave-模式)
+  - [docker 安装 jenkins](#docker-安装-jenkins)
+  - [安装插件:](#安装插件)
+- [搭建一个 maven 项目](#搭建一个-maven-项目)
+  - [基础配置](#基础配置)
+  - [权限管理](#权限管理)
+  - [参数化构建](#参数化构建)
+  - [Pipline 流水线](#pipline-流水线)
+    - [1. Pipline 介绍](#1-pipline-介绍)
+    - [2. Pipline 常规构建](#2-pipline-常规构建)
+    - [3. Pipline + Docker 自动化构建](#3-pipline--docker-自动化构建)
+  - [参考](#参考)
+<!-- TOC END -->
+
+
 
 # 搭建 jenkins
+
+
+# Master-slave 模式
 
 ## docker 安装 jenkins
 ```bash
@@ -35,7 +55,11 @@ docker exec -it 6847500d1883 cat /var/jenkins_home/secrets/initialAdminPassword
 ![](https://cdn.jsdelivr.net/gh/easterfan/picgo/blingbling/2020/20200723114456.png)
 
 
+
+
 ## 基础配置
+
+- 丢弃旧的构建 - 保留最近几次构建，节省磁盘空间
 
 ## 权限管理
 > 一个 jenkins 很多角色在用，比如 开发、运维、测试，所以需要权限管理 - 使用 Role-based Authorization Strategy 插件
@@ -73,6 +97,14 @@ Git 插件 - 直接获取到 Git 的各种信息-版本号、tag等
 ![](https://cdn.jsdelivr.net/gh/easterfan/picgo/blingbling/2020/20200729170903.png)
 
 ## Pipline 流水线
+> Pipline 是当下 CICD 最佳实践
+
+### 1. Pipline 介绍
+
+![](https://cdn.jsdelivr.net/gh/easterfan/picgo/blingbling/2020/Snipaste_2020-08-12_19-45-55.png)
+
+
+### 2. Pipline 常规构建
 1. 新建 pipeline 流水线
 ![](https://cdn.jsdelivr.net/gh/easterfan/picgo/blingbling/2020/20200729181121.png)
 
@@ -96,3 +128,11 @@ node () {
    }
 }
 ```
+
+### 3. Pipline + Docker 自动化构建
+![](https://cdn.jsdelivr.net/gh/easterfan/picgo/blingbling/2020/20200812194059.png)
+
+
+## 参考
+- 一个比较好的示例
+https://github.com/showerlee/java-war-dev
