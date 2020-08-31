@@ -1,3 +1,29 @@
+<!-- TOC START min:1 max:3 link:true asterisk:false update:true -->
+- [java8 新特性 - Lambda 表达式](#java8-新特性---lambda-表达式)
+  - [一. 函数式编程](#一-函数式编程)
+  - [二. Lambda 表达式](#二-lambda-表达式)
+    - [1. Lambda 表达式的形式](#1-lambda-表达式的形式)
+    - [2. 函数式接口](#2-函数式接口)
+    - [3.方法引用](#3方法引用)
+  - [三. Stream 流操作](#三-stream-流操作)
+    - [Filter](#filter)
+    - [Map](#map)
+    - [flatMap](#flatmap)
+    - [peek](#peek)
+    - [sort 排序](#sort-排序)
+    - [distinct 去重](#distinct-去重)
+    - [skip](#skip)
+    - [limit](#limit)
+    - [allMatch / anyMatch / nonMatch](#allmatch--anymatch--nonmatch)
+    - [findFirst / findAny](#findfirst--findany)
+    - [max / min / count](#max--min--count)
+    - [reduce](#reduce)
+    - [collect](#collect)
+    - [流的构建](#流的构建)
+  - [一个栗子看函数式编程演化的历程](#一个栗子看函数式编程演化的历程)
+  - [参考](#参考)
+<!-- TOC END -->
+
 # java8 新特性 - Lambda 表达式
 
 
@@ -278,22 +304,47 @@ peek 和 foreach 都是对流遍历，peek 是中间操作，foreach 是终端�
 
 在上面例子中，peek 和 foreach 是交替运行的，并不是说一条流先在 peek 运行结束再运行 foreach，其实出现这个状况是因为 peek 是一个无状态的中间操作，所以 **元素【是元素，不是流！】** 先执行 peek 中间操作，再执行 foreach 终端操作，就出现了交替运行的状况，如果中间操作是有状态的，那么流就会按顺序执行。  
 
-### sort
+### sort 排序
+单字段排序：
 ```java
 cartList.stream()
-                // 排序：中间操作 - 比较 Comparator
+                // 排序：中间操作 - 比较 Comparator，默认升序
                 .sorted(Comparator.comparing(Product::getTotalPrice))
                 .forEach(product -> System.out.println(JSON.toJSONString(product, true)));
+
+// 降序一：按照商品总价直接降序 - 推荐
+list.stream().sorted(Comparator.comparing(Product::getTotalPrice, Comparator.reverseOrder()));
+
+// 降序二：按照商品总价升序后，再逆序
+list.stream().sorted(Comparator.comparing(Product::getTotalPrice).reversed());
+
+// 多字段组合：先按照商品总价升序后，再按照商品单价升序
+list.stream().sorted(Comparator.comparing(Product::getTotalPrice).thenComparing(Product::getPrice));
+
+// 多字段组合：属性一降序后，属性二降序
+list.stream().sorted(Comparator.comparing(类::属性一, Comparator.reverseOrder()).thenComparing(类::属性二, Comparator.reverseOrder()));
+
+// 多字段组合：属性一升序后，属性二降序
+list.stream().sorted(Comparator.comparing(类::属性一).thenComparing(类::属性二,Comparator.reverseOrder()));
+
+// 多字段组合：属性一降序，属性二升序
+list.stream().sorted(Comparator.comparing(类::属性一, Comparator.reverseOrder()).thenComparing(类::属性二));
 ```
-### distinct
+
+### distinct 去重
 ```java
 cartList.stream()
                 .map(Product::getProductCategory)
                 // 去重：对产品的种类进行去重 - 比较 Comparator
                 .distinct()
                 .forEach(product -> System.out.println(JSON.toJSONString(product, true)));
+ // 根据单个字段名去重
+ list.stream().collect(Collectors.collectingAndThen(Collectors.toCollection(() -> new TreeSet<>(Comparator.comparing(Product::getName))), ArrayList::new))
+
+ // 根据多个字段名去重、
+
 ```
-distict 不可传参（根据传入参数进行去重），需要先对数据进行 map 等处理，再直接 distinct  
+distict 不可传参（根据传入参数进行去重），需要先对数据进行 map 等处理，再直接 distinct
 
 ### skip
 ```java
@@ -352,17 +403,20 @@ System.out.println(JSON.toJSONString(optional.get(), true));
 ```
 
 ### max / min / count
+> 求最大、最小、和、平均数
 ```java
-OptionalDouble optional = cartList.stream()
-                .mapToDouble(Product::getProductPrice)
-                //  最大值
-                .max();
-System.out.println(JSON.toJSONString(optional.getAsDouble(), true));
-```
-```java
-long count = cartList.stream()
-        .count();
-System.out.println(count);
+//最大值
+double max = cartList.stream().mapToDouble(Product::getProductPrice).max().getAsDouble();
+
+// 平均数
+double average1 = list.stream().mapToLong(User::getAge).average().getAsDouble();
+double average2 = list.stream().collect(Collectors.averagingLong(User::getAge));
+
+// 求和
+double sum = list.stream().mapToLong(User::getAge).sum();
+
+// 计算总数
+long count = cartList.stream().count();
 ```
 
 ### reduce

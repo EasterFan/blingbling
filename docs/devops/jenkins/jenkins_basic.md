@@ -20,6 +20,16 @@
 
 
 # Master-slave 模式
+如果只有一台装了 jenkins 的服务器时，
+有很多的IO，排列到队列中等待，比如 java 构建，测试，时间特别长
+jenkins 本身的负载特别大
+在高并发环境下，解决 jenkins 单点性能的不足
+jenkins 的 Master-slave 模式就是为了解决这个问题，将任务分发给别的服务器去实现，从而减轻 jenkins 负载
+
+![](https://cdn.jsdelivr.net/gh/easterfan/picgo/blingbling/2020/20200827103304.png)
+
+在 slave 上打包成功后，可以推送到远程，也可以在 slave 本地发布。
+
 
 ## docker 安装 jenkins
 ```bash
