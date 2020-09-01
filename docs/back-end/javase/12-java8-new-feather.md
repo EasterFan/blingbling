@@ -251,6 +251,7 @@ cartList.stream()
 ```
 
 ### flatMap
+flatMap 是 Map 的特殊形式，用于嵌套结构的数据。  
 ```java
 cartList.stream()
         // 扁平化：将一个元素转换成另一个元素,并拍平输出 - 转换 Function
@@ -262,11 +263,21 @@ Map 和 flatMap 的区别：
 <R> Stream<R> map(Function<? super T, ? extends R> mapper);
 <R> Stream<R> flatMap(Function<? super T, ? extends Stream<? extends R>> mapper);
 ```
+从对数据的处理方面看，  
+```java
+// map [ ...['y', 'o', 'u', 'r'], ['n', 'a', 'm', 'e']]
+[a,b,c] f(x) => [f(a),f(b),f(c)]
+
+// flatMap
+[[a,b],[c,d,e]] f(x) =>[f(a),f(b),f(c),f(d),f(e)]
+```
+
 从对流的处理方面看，
 Map: 将一种类型的值转化成另外一种类型的值 - 流对象还是原来的流对象  
 flatMap：先将元素映射成流，再将多个Stream连接成一个Stream，这时候不是用新值取代Stream的值，与map有所区别，这是重新生成一个Stream对象取而代之 - 流对象是新的流对象
 
 ### peek
+流式编程不方便调试，peek 方法一个常用场景是调试打印出，查看每次映射后是个啥样。
 ```java
 cartList.stream()
                // 遍历：中间操作 - 消费 Consumer
@@ -425,6 +436,8 @@ Reduce 意为：减少、缩小。通过入参的 Function，我们能够将 lis
 Optional name = cartList.stream()
         .map(Product::getProductName)
         .reduce((n1, n2) -> n1 + n2);
+//如果Optional为空，返回一个默认的姓名
+name.orElse("default name");
 name.ifPresent(System.out::println);
 ```
 
@@ -464,13 +477,20 @@ System.out.println(phrase);
 下面的例子展示如何将所有商品名连接成一个字符串：  
 ```java
 // 拼接字符串
+// In this cart, helicopter and iphone and t-shirt and javaBook and soccer will come to you soon.
 String phrase2 = cartList
         .stream()
         .map(Product::getProductName)
         .collect(Collectors.joining(" and ","In this cart, "," will come to you soon."));
 
 System.out.println(phrase2);
-// In this cart, helicopter and iphone and t-shirt and javaBook and soccer will come to you soon.
+
+// joining
+String join = emps.stream().map(Employee::getName).collect(Collectors.joining());
+// 添加连接
+String join1 = emps.stream().map(Employee::getName).collect(Collectors.joining("-"));
+// 添加前缀和后缀还有连接
+String join2 = emps.stream().map(Employee::getName).collect(Collectors.joining("-", "{", "}"));
 ```
 
 将一个stream转换为map，我们必须指定map的key和value如何映射。要注意的是key的值必须是唯一性的，否则会抛出IllegalStateException，但是可以通过使用合并函数（可选）绕过这个IllegalStateException异常：  
