@@ -19,6 +19,7 @@
     - [max / min / count](#max--min--count)
     - [reduce](#reduce)
     - [collect](#collect)
+    - [Optional 使用](#optional-使用)
     - [流的构建](#流的构建)
   - [一个栗子看函数式编程演化的历程](#一个栗子看函数式编程演化的历程)
   - [参考](#参考)
@@ -516,6 +517,9 @@ Map<Boolean, List<Product>> partition = cartList.stream()
         .collect(Collectors.partitioningBy(product -> product.getTotalPrice() > 200));
 System.out.println(JSON.toJSONString(partition, true));
 ```
+### Optional 使用
+为什么要用？ - clean code 和 避免空指针
+
 ### 流的构建
 流的构建有四种构建形式。  
 
