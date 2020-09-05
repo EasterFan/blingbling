@@ -517,8 +517,6 @@ Map<Boolean, List<Product>> partition = cartList.stream()
         .collect(Collectors.partitioningBy(product -> product.getTotalPrice() > 200));
 System.out.println(JSON.toJSONString(partition, true));
 ```
-### Optional 使用
-为什么要用？ - clean code 和 避免空指针
 
 ### 流的构建
 流的构建有四种构建形式。  
@@ -578,7 +576,26 @@ of 静态方法可以接收任意数量的参数，显式的创建流
     }
 ```
 
+## 四. Optional 使用
+为什么要用？ - clean code(判空操作带来的防御式检查) 和 避免空指针
 
+### 创建 Optional 对象
+```java
+// 声明一个空的 Optional
+Optional<Car> optCar = Optional.empty();
+
+// 根据一个非空值创建 Optional - 使用静态工厂方法 Optional.of - 如果car是一个null，这段代码会立即抛出一个NullPointerException，而不是等到你 试图访问car的属性值时才返回一个错误。
+Optional<Car> optCar = Optional.of(car);
+
+// 可接受null的Optional - 如果car是null，那么得到的Optional对象就是个空对象
+Optional<Car> optCar = Optional.ofNullable(car);
+
+```
+
+建议：
+- 避免使用基础类型的 Optional 对象，即避免使用Optional<Integer>, Optional<Double>,而是直接返回：OptionalInt,OptionalDouble
+
+### 从 Optional 对象中提取和转换值
 
 
 ## 一个栗子看函数式编程演化的历程
