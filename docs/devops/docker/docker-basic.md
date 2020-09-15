@@ -101,6 +101,15 @@ docker system prune -a --volumes
 ```
 
 ### Vagrantfile 需要修改的部分
+0. 前置操作
+```bash
+# 安装 vim 基础工具
+sudo yum install vim-enhanced -y
+
+# 登陆 docker 拉镜像
+docker login
+```
+
 1. 修改 vagrantfile，使虚拟机创建成功后，就自动安装 docker，各个系统安装命令见 docker 文档（注意 -y 静默安装，否则会安装失败）
 
 ```
