@@ -19,8 +19,12 @@
     - [max / min / count](#max--min--count)
     - [reduce](#reduce)
     - [collect](#collect)
-    - [Optional 使用](#optional-使用)
     - [流的构建](#流的构建)
+  - [四. Optional 使用](#四-optional-使用)
+    - [创建 Optional 对象](#创建-optional-对象)
+    - [应用场景一：Optional 处理空指针](#应用场景一optional-处理空指针)
+    - [应用场景二： Optional 在处理集合操作时先判空](#应用场景二-optional-在处理集合操作时先判空)
+    - [从 Optional 对象中提取和转换值](#从-optional-对象中提取和转换值)
   - [一个栗子看函数式编程演化的历程](#一个栗子看函数式编程演化的历程)
   - [参考](#参考)
 <!-- TOC END -->
@@ -591,6 +595,37 @@ Optional<Car> optCar = Optional.of(car);
 Optional<Car> optCar = Optional.ofNullable(car);
 
 ```
+
+### 应用场景一：Optional 处理空指针
+orElse 和 orElseGet 的区别：
+- 写法上：orElse 返回具体值，orElseGet 是执行一个方法
+- 性能上：当 optional 为空时，两者都会执行，但是当 Optional 不为空时，orElse 会执行（但是不返回），orElseGet 不会执行，在高并发环境中，orElse 相较于 orElseGet 会增加内存开销，拉低系统性能
+
+```java
+// 当引用缺失时可使用的方法
+        optional.orElse("引用缺失！");
+
+        optional.orElseGet(() -> "自定义引用缺失");
+
+        optional.orElseThrow(() -> {
+            throw new RuntimeException("空指针！引用缺失异常");
+        });
+```
+
+### 应用场景二： Optional 在处理集合操作时先判空
+```java
+public static void stream() {
+    List list = null;
+    // 一般没判空的做法
+    list.stream().forEach(System.out::println);
+    // 对集合操作前 stream 进行判空操作 - 1.转为可为空的 Optional 2.将 list 转为 Stream 流 3. 如果 list 为空，返回一个空的流（避免NullPointException） 4. 如果不为空的话，进行正常的流式操作
+    Optional.ofNullable(list)
+            .map(List::stream)
+            .orElseGet(Stream::empty)
+            .forEach(System.out::println);
+}
+```
+
 
 建议：
 - 避免使用基础类型的 Optional 对象，即避免使用Optional<Integer>, Optional<Double>,而是直接返回：OptionalInt,OptionalDouble
