@@ -30,6 +30,7 @@
   - [iterm 保存 ssh 连接](#iterm-保存-ssh-连接)
     - [1. 生成云服务器私钥后](#1-生成云服务器私钥后)
     - [2. 配置 iterm](#2-配置-iterm)
+  - [navi 命令行提示神器](#navi-命令行提示神器)
 - [六. gitbook 环境](#六-gitbook-环境)
   - [1. gitbook 版 + docsify 版](#1-gitbook-版--docsify-版)
   - [2. atom 环境](#2-atom-环境)
@@ -691,33 +692,28 @@ docker pull mysql:5.7
 ## atom 快捷键
 
 ## 附件1：.bash_profile
-2020.03.12 backup:   
+2020.09.21 backup:   
 ```
-# publish book automate -- by easter
-alias bookgo="git add . && git commit -m 'Auot-update' && git pull --rebase && git push origin master && npm run docs && gh-pages -d website/build/blingbling"
+# jenv -- by easter
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
 
-# public gitbook to gh-pages in one tap -- by easter
-alias puu="gitbook build && gh-pages -d _book"
-
-# java
-export JAVA_HOME=$(/usr/libexec/java_home)
+# android sdk
+ANDROID_HOME=/Users/easter/Library/Android/sdk
+PATH=${PATH}:${ANDROID_HOME}/tools
+PATH=${PATH}:${ANDROID_HOME}/platform-tools
 
 # nvm
 source ~/.nvm/nvm.sh
-export NVM_DIR="/Users/easterfan/.nvm"
+export NVM_DIR="/Users/easter/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-# PSQL
-export PSQL_HOME=/Applications/Postgres.app/Contents/Versions/9.6
-
-# redis
-export PATH=$PATH:$HOME/Software/redis-5.0.6/src
-
-# idea
-alias idea='open -a IntelliJ\ IDEA'
 
 # forbidden homebrew update -- by easter
 export HOMEBREW_NO_AUTO_UPDATE=true
+
+# idea
+alias idea='open -a IntelliJ\ IDEA'
 
 # autojump --by easter
   [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
@@ -730,15 +726,17 @@ alias ga.='git add .'
 alias gc='git commit -m '
 alias gcno='git commit --amend --no-edit'
 
-
-alias gpr='git pull --rebase'
+alias gpr='git pull origin master --rebase'
 alias gpu='git push origin master'
+alias ggo="git add . && git commit -m 'Auot-update' && git pull origin master --rebase && git push origin master"
 
 alias gsl='git stash list'
 alias gsa='git stash save '
 alias gsp='git stash pop'
 
 alias ghi="git log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short"
+alias bs='brew search '
+alias nap="navi --print"
 ```
 
 ## 参考
