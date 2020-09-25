@@ -50,7 +50,7 @@
 3. 集合的体系
 > 为什么会出现这么多容器?因为每一个容器对数据的存储方式不同, 这个存储方式 -- 数据结构
 
-![](../assets/collection_structure.png)  
+![](https://cdn.jsdelivr.net/gh/easterfan/picgo/blingbling/2020/collection_structure.png)
 
 list: 序列 Queue: 队列 set: 集  
 list和Queue存放有序可重复的值，元素存取是有序的  
