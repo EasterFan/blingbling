@@ -362,6 +362,8 @@ cartList.stream()
         .collect(Collectors.collectingAndThen(Collectors.toCollection(() ->
         new TreeSet<>(Comparator.comparing(o -> o.getBrand() + ";" + o.getCarModel()))), ArrayList::new));
 
+// 利用 set 特性去重并保证对象的有序性
+List<String> listNew = new ArrayList<String>(new TreeSet<String>(list));
 ```
 distict 不可传参（根据传入参数进行去重），需要先对数据进行 map 等处理，再直接 distinct
 
