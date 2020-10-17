@@ -13,3 +13,6 @@
 - 画一个弯道需要9个元素
 
 ![](https://cdn.jsdelivr.net/gh/easterfan/picgo/blingbling/2020/20201009173200.png)
+
+
+## 连接的撤销和恢复
