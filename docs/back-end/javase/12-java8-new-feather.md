@@ -600,7 +600,7 @@ Optional<Car> optCar = Optional.ofNullable(car);
 
 ### 应用场景一：Optional 处理空指针
 orElse 和 orElseGet 的区别：
-- 写法上：orElse 返回具体值，orElseGet 是执行一个方法
+- 写法上：orElse 返回具体值，orElseGet 是执行一个方法(该方法的返回值必须和声明处保持一致，即这个被执行的方法返回值和 orElse 返回值同类型)
 - 性能上：当 optional 为空时，两者都会执行，但是当 Optional 不为空时，orElse 会执行（但是不返回），orElseGet 不会执行，在高并发环境中，orElse 相较于 orElseGet 会增加内存开销，拉低系统性能
 
 ```java
