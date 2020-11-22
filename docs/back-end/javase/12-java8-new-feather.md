@@ -473,6 +473,11 @@ Map<Double, List<Product>> productsByPrice = cartList
 
        productsByPrice
                .forEach((price, p) -> System.out.format("price %s: %s\n", price, p.get(0).getProductName()));
+
+
+// Map<分类条件，结果集合> 将分组后的结果再进行一次 map 映射
+Map<Object, List<String>> result = cartList.stream()
+                              .collect(Collectors.groupingBy(Product::getProductCategory, Collectors.mapping(Product::getProductName, Collectors.toList())));
 ```
 
 可以通过`summarizing collectors`能返回一个内置的统计对象，通过这个对象能够获取更加全面的统计信息，比如商品单价中的最大值，最小值，平均值等结果。
