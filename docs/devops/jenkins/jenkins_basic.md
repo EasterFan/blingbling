@@ -144,5 +144,7 @@ node () {
 
 
 ## 参考
+- jenkins 书中文版
+https://www.jenkins.io/doc/book/pipeline/jenkinsfile/#creating-a-jenkinsfile
 - 一个比较好的示例
 https://github.com/showerlee/java-war-dev

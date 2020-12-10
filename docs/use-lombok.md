@@ -99,7 +99,7 @@ val/var 用于**局部变量**的修饰，有了这注解修饰后，变量的�
 
  var 下划线报错其实是 idea 环境问题（各种清 idea 缓存都失败，删除项目目录下 `.idea` 目录即可）
 
- ###
+### lombok + mybatis-plus 查询出现数组越界问题 - @NoArgsConstructor
 
 ![](https://cdn.jsdelivr.net/gh/easterfan/picgo/blingbling/2020/20201209105305.png)
 https://github.com/mybatis/mybatis-3/issues/1567
