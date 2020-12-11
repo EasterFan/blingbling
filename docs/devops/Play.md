@@ -18,3 +18,10 @@ https://stackoverflow.com/questions/55055488/jenkins-in-docker-cannot-connect-to
 
 
 ## 备份 jenkins
+
+
+
+## 踩坑
+使用 `mvn package -X` 导致jenkins 疯狂打log，服务器CPU 和硬盘 IO 挂，最后导致 jenkins 重启，参照
+https://stackoverflow.com/questions/24989653/jenkins-maven-build-137-error#:~:text=For%20reference%20the%20status%20code,OS%20needs%20more%20virtual%20memory.
+![](https://cdn.jsdelivr.net/gh/easterfan/picgo/blingbling/2020/20201210172750.png)
