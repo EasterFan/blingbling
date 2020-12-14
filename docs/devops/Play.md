@@ -9,13 +9,20 @@ https://marketplace.digitalocean.com/apps/docker
 ## 配置 jenkins
 ```bash
 # 启动 jenkins
-docker run -d --restart=always --name=my_jenkins -p 8089:8080  -p 50001:50000 -v /root/easter/data/jenkins_home:/var/jenkins_home --user root --privileged -v /var/run/docker.sock:/var/run/docker.sock a1a26454c4cd
+docker run -d --restart=always --name=my_jenkins -p 8089:8080  -p 50001:50000 -v /root/easter/data/jenkins_home:/var/jenkins_home --user root --privileged -v /var/run/docker.sock:/var/run/docker.sock  a1a26454c4cd
 ```
---user 指定 jenkins 为 root，防止出现在 jenkins 中执行docker 命令时，出现权限不足情况
+ 暂存
+```bash
+docker run -d --restart=always --name=my_jenkins -p 8089:8080  -p 50001:50000 -v /root/easter/data/jenkins_home:/var/jenkins_home --user root --privileged -v /var/run/docker.sock:/var/run/docker.sock -v /usr/bin/docker-compose:/usr/local/bin/docker-compose a1a26454c4cd
+```
 
+--user 指定 jenkins 为 root，防止出现在 jenkins 中执行docker 命令时，出现权限不足情况
 --privileged 将宿主机docker sock 挂载到容器中，使jenkins可以启动另一个容器
 https://stackoverflow.com/questions/55055488/jenkins-in-docker-cannot-connect-to-the-docker-daemon-at-unix-var-run-docke
 
+jenkins 中使用docker
+
+![](https://cdn.jsdelivr.net/gh/easterfan/picgo/blingbling/2020/20201213185643.png)
 
 ## 备份 jenkins
 
