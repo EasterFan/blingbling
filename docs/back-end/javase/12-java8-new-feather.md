@@ -19,6 +19,7 @@
     - [max / min / count](#max--min--count)
     - [reduce](#reduce)
     - [collect](#collect)
+    - [在流中使用下标](#在流中使用下标)
     - [流的构建](#流的构建)
   - [四. Optional 使用](#四-optional-使用)
     - [创建 Optional 对象](#创建-optional-对象)
@@ -519,6 +520,10 @@ Map<String, Double> map = cartList
                 Product::getProductPrice));
 
 System.out.println(map);
+
+NodeRectangle.entrySet().stream()
+                        .filter(entry -> rectangle.equals(entry.getValue()))
+                        .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
 ```
 
 将流元素分区  
@@ -529,6 +534,14 @@ Map<Boolean, List<Product>> partition = cartList.stream()
 System.out.println(JSON.toJSONString(partition, true));
 ```
 
+### 在流中使用下标
+```java
+List<String> names = Arrays.asList("Sam", "Pamela", "Dave", "Pascal", "Erik");
+IntStream.range(0, names.length)
+         .filter(i -> i%2==0)
+         .mapToObj(i -> names[i])
+         .collect(Collectors.toList());
+```
 ### 流的构建
 流的构建有四种构建形式。  
 
