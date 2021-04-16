@@ -534,6 +534,22 @@ Map<Boolean, List<Product>> partition = cartList.stream()
 System.out.println(JSON.toJSONString(partition, true));
 ```
 
+
+#### 自定义一个 collect 收集器
+实现 Collector 接口，根据业务定制更优解，提高性能。  
+
+实现步骤：  
+实现5个抽象方法
+
+
+T：流当中的元素的类型  
+A: 收集容器的类型  
+R：结果类型  
+Collector<T, A, R>
+
+
+
+
 ### 在流中使用下标
 ```java
 List<String> names = Arrays.asList("Sam", "Pamela", "Dave", "Pascal", "Erik");

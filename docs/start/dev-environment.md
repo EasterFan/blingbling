@@ -85,7 +85,7 @@ https://snapshots.symless.com/public/1.11.1-rc2/
 参见：https://www.asus.com.cn/support/FAQ/1043895/
 
 ## 优化 Homebrew
-homebrew 是 mac 下的包管理器，可以方便的安装一些 Unix 软件，拿到 mac 的第一件事就是安装 homebrew
+homebrew 是 mac 下的包管理器，可以方便的安装一些 Unix 软件，拿到 mac 的第二件事就是安装 homebrew（第一件是卸载系统软件）
 
 brew 和 brew cask 都可以安装软件，两者的区别是：  
 brew 下载的是源码解压，然后在本地 `./configure && make install `, 同时会包含相关依存库。偏开发向
@@ -100,10 +100,24 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 brew doctor
 brew --version
 
-# 关闭 homebrew 自动更新 - 需要时候再手动更新
+# 关闭 homebrew 自动更新 - 需要时候再手动更新 - 跳转 iterm 查看当前 shell
 vim ~/.zshrc
 export HOMEBREW_NO_AUTO_UPDATE=true
 
+
+# 安装基础软件 - Mac 系统本身50G
+brew install git autojump jenv navi wget
+
+brew cask install atom evernote  jetbrains-toolbox obs snipaste baidunetdisk flycut keepassx  picgo sogouinput  
+bartender  google-chrome licecap  postman calibre hiddenbar  mailmaster visual-studio-code shiftit
+ccleaner iina  telegram-desktop  webstorm dash4 intellij-idea neteasemusic qq  xmind iterm2  nextcloud the-unarchiver zoomus docker nutstore transmit
+
+## 可选软件
+brew cask install typora vagrant soundflower miniconda tencent-meeting slack dingtalk
+
+## 安装包软件见百度云备份
+
+# 编辑开机自启软件
 ```
 
 默认 `Alfred` 是不会搜索到 `HomeBrew Cask` 安装的软件的，所以需要额外执行这个命令关联起来：  

@@ -18,3 +18,11 @@
 
 <!-- # 框架 -->
 - [taro 基础](taro-basic.md)
+
+<!-- # 面试高频 -->
+- 面试
+  - [Java 基础](interview/a-1-java-basic.md)
+  - [数据库](interview/a-1-java-basic.md)
+    - [MySQL](interview/b-1-mysql.md)
+    - [Redis](interview/b-2-redis.md)
+  - [JVM](interview/a-2-jvm.md)
