@@ -99,6 +99,10 @@ brew 下载的是源码解压，然后在本地 `./configure && make install `, 
 
 brew cask 直接下载已经编译好的应用包（.dmg/.pkg）,然后解压到本地运行，通常是带 GUI 界面的软件。偏生活向。
 
+在 homebrew 官网 https://formulae.brew.sh 下载brew，然后安装 cask
+
+安装 homebrew 如果出现这个问题，说明可能出现DNS污染，参考这篇文章 https://blog.csdn.net/qq_43531694/article/details/106862753
+
 ```bash
 # 安装 homebrew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -112,7 +116,7 @@ vim ~/.zshrc
 export HOMEBREW_NO_AUTO_UPDATE=true
 
 ## 安装 homebrew cask
-brew install brew-cask
+brew install cask
 
 
 # 安装基础软件 - Mac 系统本身50G
