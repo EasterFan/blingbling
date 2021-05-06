@@ -1,4 +1,5 @@
 > 话说，工欲善其事，必先利其器
+大方向：坚果云网页端协助完成ss环境 -> 卸载软件 -> 安装 homebrew 
 
 <!-- TOC START min:1 max:3 link:true asterisk:false update:true -->
 - [一. 系统优化](#一-系统优化)
@@ -74,6 +75,10 @@ defaults write com.apple.dock static-only -boolean tr+-*ue; killall Dock
 ### 【撤销】配置 Dock，只显示已打开应用，减少干扰
 defaults delete com.apple.dock static-only; killall Dock
 ```
+在新电脑上登陆坚果云，下载必要的fq环境，防止后续安装软件失败
+
+
+
 
 ## 硬件设置 - 两台主机共享一个显示器
 实现效果：两台主机连接同一个显示器，共用一套键盘鼠标。
@@ -83,6 +88,8 @@ https://snapshots.symless.com/public/1.11.1-rc2/
 对支持 PIP/PBP 功能的显示器，可以将两个信号源分屏或画中画方式显示在一个显示器上，打开显示器的 OSD 菜单开启 PIP 功能即可。
 
 参见：https://www.asus.com.cn/support/FAQ/1043895/
+
+
 
 ## 优化 Homebrew
 homebrew 是 mac 下的包管理器，可以方便的安装一些 Unix 软件，拿到 mac 的第二件事就是安装 homebrew（第一件是卸载系统软件）
@@ -104,6 +111,9 @@ brew --version
 vim ~/.zshrc
 export HOMEBREW_NO_AUTO_UPDATE=true
 
+## 安装 homebrew cask
+brew install brew-cask
+
 
 # 安装基础软件 - Mac 系统本身50G
 brew install git autojump jenv navi wget
@@ -116,7 +126,7 @@ ccleaner iina  telegram-desktop  webstorm dash4 intellij-idea neteasemusic qq  x
 brew cask install typora vagrant soundflower miniconda tencent-meeting slack dingtalk
 
 ## 安装包软件见百度云备份
-
+navicat
 # 编辑开机自启软件
 ```
 

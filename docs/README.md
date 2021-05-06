@@ -1,13 +1,6 @@
 # 开始
-datasource:
-  url: jdbc:mysql://10.1.11.35:3306/src-asset-svc?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull
-  driver-class-name: com.mysql.cj.jdbc.Driver
-  username: root
-  password: 123456
-
 
  kubectl logs src-message-svc-54cff98684-xlsw9 --namespace=caas-system
-
 
  shell 脚本
 - step1：trans_dev上: 更改添加到本地仓库（避免DS文件和logs文件）
@@ -199,3 +192,24 @@ $ kubectl taint nodes foo dedicated=special-user:NoSchedule
 
 #自动补全
 source <(kubectl completion bash)
+
+| 机型                  | 快手提现手机号 | 微信/手机号                                | 备注                  |
+| --------------------- | -------------- | ------------------------------------------ | --------------------- |
+| 荣耀v9                | 15927085477    | 21世纪最具潜力的哲学科幻小说家/15927085477 | 主力                  |
+| RedMI note 9          | (518)288-5653  | 支付宝-Easter 的小钱袋                     | 主力                  |
+| ResMi note 9 应用双开 |                |                                            | 宝宝gv - 暂时无法提现 |
+| RedMI note 9 手机分身 | (224)218-9772  |                                            | 买的gv                |
+
+
+
+| 序号 | 项目名称            | 手机         | 每日收益       | 预计月收益               | 预计年收益 |
+| ---- | ------------------- | ------------ | -------------- | ------------------------ | ---------- |
+| 1    | 招行社区文章        | RedMi        | 0.23           | 6.9                      | 82         |
+| 2    | 掌上生活9积分抽奖   | RedMi        | 0.3            | 9                        | 108        |
+| 3    | 云闪付              | RedMi        | 0.04           | 1.2                      | 14.4       |
+| 4    | 快手签到            | RedMi + 华为 | 0.2 * 2 = 0.4  | 12                       | 144        |
+| 5    | 快手刷视频          | RedMi + 华为 | 0.75 * 2 = 1.5 | 45                       | 540        |
+| 6    | 便民刮刮乐          | RedMi        |                | 69/5*0.58 = 8 或两包抽纸 | 96         |
+| 7    | 微信支付有优惠      | RedMi        |                | 2                        | 24         |
+| 8    | 超级月末周          | RedMi        |                | 3包抽纸+1卷垃圾袋        |            |
+| 9    | 中国银行APP签到金豆 | RedMi        |                | 3.6                      | 43.2       |
