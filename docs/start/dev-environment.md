@@ -1,5 +1,5 @@
 > 话说，工欲善其事，必先利其器
-大方向：坚果云网页端协助完成ss环境 -> 卸载软件 -> 安装 homebrew 
+大方向：坚果云网页端协助完成ss环境 -> 卸载软件 -> 安装 homebrew
 
 <!-- TOC START min:1 max:3 link:true asterisk:false update:true -->
 - [一. 系统优化](#一-系统优化)
@@ -535,7 +535,10 @@ Command: `ssh -i ~/.ssh/whiteline_my_mac root@123.456.100.30`
 
 ## navi 命令行提示神器
 忘记 navi 命令行仓库地址时，在 navi 中输入 navi 查询。  
-
+安装完navi 后，将仓库地址克隆到本地：  
+```bash
+navi repo add https://github.com/EasterFan/navi-cheats
+```
 
 
 
