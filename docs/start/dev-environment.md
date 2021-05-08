@@ -77,9 +77,6 @@ defaults delete com.apple.dock static-only; killall Dock
 ```
 在新电脑上登陆坚果云，下载必要的fq环境，防止后续安装软件失败
 
-
-
-
 ## 硬件设置 - 两台主机共享一个显示器
 实现效果：两台主机连接同一个显示器，共用一套键盘鼠标。
 
@@ -89,17 +86,10 @@ https://snapshots.symless.com/public/1.11.1-rc2/
 
 参见：https://www.asus.com.cn/support/FAQ/1043895/
 
-
-
 ## 优化 Homebrew
-homebrew 是 mac 下的包管理器，可以方便的安装一些 Unix 软件，拿到 mac 的第二件事就是安装 homebrew（第一件是卸载系统软件）
+homebrew 是 mac 下的包管理器，可以方便的安装一些 Unix 软件，拿到 mac 的第二件事就是安装 homebrew（第一件是卸载系统软件）。
 
-brew 和 brew cask 都可以安装软件，两者的区别是：  
-brew 下载的是源码解压，然后在本地 `./configure && make install `, 同时会包含相关依存库。偏开发向
-
-brew cask 直接下载已经编译好的应用包（.dmg/.pkg）,然后解压到本地运行，通常是带 GUI 界面的软件。偏生活向。
-
-在 homebrew 官网 https://formulae.brew.sh 下载brew，然后安装 cask
+在 homebrew 官网 https://formulae.brew.sh
 
 安装 homebrew 如果出现这个问题，说明可能出现DNS污染，参考这篇文章 https://blog.csdn.net/qq_43531694/article/details/106862753
 
@@ -114,10 +104,6 @@ brew --version
 # 关闭 homebrew 自动更新 - 需要时候再手动更新 - 跳转 iterm 查看当前 shell
 vim ~/.zshrc
 export HOMEBREW_NO_AUTO_UPDATE=true
-
-## 安装 homebrew cask
-brew install cask
-
 
 # 安装基础软件 - Mac 系统本身50G
 brew install git autojump jenv navi wget
