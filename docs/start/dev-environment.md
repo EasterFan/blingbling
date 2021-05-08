@@ -120,11 +120,6 @@ navicat
 # 编辑开机自启软件
 ```
 
-默认 `Alfred` 是不会搜索到 `HomeBrew Cask` 安装的软件的，所以需要额外执行这个命令关联起来：  
-```bash
-brew cask alfred link
-```
-
 ### 【查】看软件
 ```bash
 # 查找软件
