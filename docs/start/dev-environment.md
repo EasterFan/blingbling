@@ -106,11 +106,10 @@ vim ~/.zshrc
 export HOMEBREW_NO_AUTO_UPDATE=true
 
 # 安装基础软件 - Mac 系统本身50G
-brew install git autojump jenv navi wget
+brew install git autojump jenv navi wget maven
 
-brew cask install atom evernote  jetbrains-toolbox obs snipaste baidunetdisk flycut keepassx  picgo sogouinput  
-bartender  google-chrome licecap  postman calibre hiddenbar  mailmaster visual-studio-code shiftit
-ccleaner iina  telegram-desktop  webstorm dash4 intellij-idea neteasemusic qq  xmind iterm2  nextcloud the-unarchiver zoomus docker nutstore transmit
+brew cask install atom evernote alfred jetbrains-toolbox obs snipaste baidunetdisk flycut keepassx  picgo sogouinput  google-chrome licecap  postman calibre hiddenbar  mailmaster visual-studio-code shiftit
+ccleaner iina  telegram-desktop  webstorm intellij-idea neteasemusic qq  xmind iterm2  nextcloud the-unarchiver zoom docker nutstore transmit tencent-lemon
 
 ## 可选软件
 brew cask install typora vagrant soundflower miniconda tencent-meeting slack dingtalk
